@@ -1,0 +1,194 @@
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .panel ul {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+        
+        .news-item {
+            padding: 4px 14px;
+            margin: 0px;
+        }
+        
+        .clearfix {
+            display: none;
+        }
+        
+        
+        .tek {
+            border-left: 10px solid #018F00;
+            border-bottom: 2px solid #018F00;
+            color: #018F00;
+            font-weight: bold;
+            padding-left: 5px;
+        }
+        
+        .rop {
+            border-left: 10px solid purple;
+            border-bottom: 2px solid purple;
+            color: purple;
+            font-weight: bold;
+            padding-left: 5px;
+        }
+        
+        .makale {
+            border-left: 10px solid #203647;
+            border-bottom: 2px solid #203647;
+            color: #203647;
+            font-weight: bold;
+            padding-left: 5px;
+        }
+        
+        ul li table tr td {
+            background-color: rgba(255, 255, 255, 0);
+            font-size: 11px;
+            padding: 0px;
+        }
+        
+        ul li table tr td img {
+            margin-right: 5px;
+        }
+        
+        .panel-heading {
+            margin-bottom: 12px;
+        }
+        
+        .floating-baslik {
+            display: block;
+            color: black;
+            font-weight: bold;
+            font-size: 13px;
+        }
+        
+        .vertical-slider {
+            box-shadow: 0px 1px 3px #203647;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0);
+            margin-top: 35px;
+            margin-bottom: 35px;
+        }
+        
+        .main-tek ul li table tr {
+            background-color: rgba(255, 255, 255, 0.87);
+           
+        }
+        
+        .main-rop ul li table tr {
+            background-color: rgba(255, 255, 255, 0.87);
+            
+        }
+        
+        .main-mak ul li table tr {
+            background-color: rgba(255, 255, 255, 0.87);
+            
+        }
+        
+        .floating-baslik a {
+            color: black;
+        }
+        /********************************RESPONSIVE*********************************************/
+        
+        @media screen and (min-width:280px) {
+            .main-rop,
+            .main-mak {
+                margin-top: 20px;
+            }
+            .vertical-icerik {
+                display: none;
+            }
+            .panel .row ul li {
+                width: 100%;
+            }
+            .vertical-slider ul li table tr td img {
+                height: 60px;
+            }
+        }
+        
+        @media screen and (min-width:350px) {
+            .panel .row ul li {
+                width: 100%;
+            }
+        }
+        
+        @media screen and (min-width:375px) {
+            .vertical-icerik {
+                display: block;
+            }
+            .vertical-slider ul li table tr td img {
+                height: 68.3px;
+            }
+        }
+        
+        @media screen and (min-width:576px) {
+            .main-rop,
+            .main-mak {
+                margin-top: 0px;
+            }
+            .vertical-slider ul li table tr td {
+                font-size: 10px;
+            }
+            .floating-baslik {
+                font-size: 10px;
+            }
+            .rop,
+            .tek,
+            .makale {
+                font-size: 14px;
+            }
+            .vertical-slider ul li table tr td img {
+                width: 50px;
+                height: 50px;
+            }
+           
+            .vertical-icerik {
+                margin-bottom: 0px;
+                padding-bottom: 0px;
+                display: none;
+            }
+        }
+        
+        @media screen and (min-width:768px) {
+            .vertical-slider ul li table tr td img {
+                width: 60px;
+                height: 60px;
+            }
+            .read-more {
+                display: block;
+            }
+            .floating-baslik {
+                font-size: 13px;
+            }
+            .vertical-icerik {
+                margin-bottom: 0px;
+                padding-bottom: 0px;
+                display: none;
+            }
+        }
+        
+        @media screen and (min-width:992px) {
+            .floating-baslik {
+                font-size: 10px;
+            }
+            .rop,
+            .tek,
+            .makale {
+                font-size: 18px;
+            }
+            .vertical-icerik {
+                margin-bottom: 0px;
+                padding-bottom: 0px;
+                display: block;
+            }
+        }
+        
+        @media screen and (min-width:1200px) {
+            .floating-baslik {
+                font-size: 13px;
+            }
+        }

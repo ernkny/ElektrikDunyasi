@@ -1,0 +1,51 @@
+﻿@model ElektrikDunyasi.Models.Entity.Teknoloji
+@{
+    ViewBag.Title = "TeknolojiEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form style="margin-top:15px" class="form-group container "
+      method="post" enctype="multipart/form-data">
+    <div class="form-group row ">
+        <label class="ekle">Teknoloji Başlık</label>
+        <input type="text" class="form-control" name="TeknoBaslik" />
+
+    </div>
+    <div class="form-group row ">
+        <label class="ekle">Keywords</label>
+        <input type="text" class="form-control" name="keywords" />
+
+    </div>
+    <div class="form-group row ">
+        <label class="ekle">Teknoloji Tarih</label>
+        <input type="datetime-local" class="form-control" name="tarih" />
+
+    </div>
+    <div class="form-group row ">
+        <label class="ekle">Teknoloji Resim</label>
+        <input style="margin-left:20px" type="file" name="file" />
+
+    </div>
+    <hr style="border:1px solid gray" />
+
+    <div class="form-group row ">
+        <label class="col-lg-12 ekle" style="padding-bottom:20px;margin-left:-15px;">Teknoloji İçerik</label>
+        <textarea type="text" class="form-control col-lg-12" name="TeknoYazi" id="TeknoYazi"></textarea>
+
+
+    </div>
+
+
+    <div style="margin-top:15px;">
+        <button class="btn btn-info" id="Teknolojieklebtn">Teknoloji Ekle</button>
+    </div>
+</form>
+
+
+
+<script src="~/Scripts/ckeditor/ckeditor.js">
+
+</script>
+<script>
+    CKEDITOR.replace('TeknoYazi');
+</script>

@@ -1,0 +1,54 @@
+﻿@using ElektrikDunyasi.Models.Entity;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Editor>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<div class="container ">
+
+    <h1 style="font-family:bold;font-weight:700; text-align:center">Editörden</h1>
+    <a style="margin-bottom:15px" href="/Editor/EditorEkle/" class="btn btn-primary">Yeni Yazı Ekle</a>
+    <a style="margin-bottom:15px" href="/Editor/ResimGetir/1" class="btn btn-info">Resim Güncelle</a>
+
+    <table class="table table-bordered bg-light">
+        <tr>
+            <th style="font-size:20px; font-weight:bold;">*</th>
+            <th>Yazı Başlığı</th>
+            <th>Keywords</th>
+            <th>Tarih</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+
+
+        </tr>
+        @{int i = 1; }
+        @foreach (var editor in Model)
+        {
+
+            <tr>
+                <td style="font-weight:bold;">@i</td>
+                <td style="width:35%">@editor.Baslik </td>
+                <td style="width:25%">@editor.Keywords</td>
+
+                <td style="width:25%">@editor.Tarih</td>
+                <td>@Html.ActionLink("Sil", "EditorSil", new { id = editor.EditorId }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz?')" })</td>
+
+                <td style="width:5%"><a href="/Editor/EditorGetir/@editor.EditorId" class="btn btn-success">Güncelle</a></td>
+
+
+            </tr>
+            i++;
+        }
+
+
+    </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+
+
+
+</div>
+

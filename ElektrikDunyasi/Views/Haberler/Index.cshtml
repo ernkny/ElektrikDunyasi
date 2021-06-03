@@ -1,0 +1,54 @@
+﻿@using ElektrikDunyasi.Models.Entity;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Haberler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container ">
+    
+        <h1 style="font-family:bold;font-weight:bold; text-align:center">Haberler</h1>
+        <a  style="margin-bottom:15px" href="/Haberler/HaberEkle/" class="btn btn-primary">Yeni Haber Ekle</a>
+    
+        <table class="table table-bordered bg-light">
+            <tr>
+                <th style="font-size:20px; font-weight:bold;">*</th>
+                <th>Haber Başlığı</th>
+                <th>Keywords</th>
+                <th>Yayınlayan</th>
+                <th>Haber Resmi</th>
+                <th>Tarih</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+
+
+            </tr>
+            @{int i = 1; }
+            @foreach (var haber in Model)
+            {
+               
+        <tr>
+            <td style="font-weight:bold;">@i</td>
+            <td style="width:35%">@haber.HaberBaslik </td>
+            <td style="width:25%">@haber.Keywords</td>
+            <td style="width:12%">@haber.HaberEkleyen</td>
+            <td style="width:13%"><img style="width:60px;height:60px" src="@haber.ImageUrl" alt="@haber.Keywords" /></td>
+            <td style="width:10%">@haber.Tarih</td>
+            <td>@Html.ActionLink("Sil", "HaberSil", new { id = haber.HaberId }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz?')" })</td>
+
+            <td style="width:5%"><a href="/Haberler/HaberGetir/@haber.HaberId" class="btn btn-success">Güncelle</a></td>
+
+
+        </tr>
+                i++;
+            }
+
+
+        </table>
+    @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new { page }))
+
+
+   
+</div>

@@ -1,0 +1,6 @@
+C:\Users\erenk\source\repos\ElektrikDunyasi\proje.md5\bin\Release\proje.md5.dll
+C:\Users\erenk\source\repos\ElektrikDunyasi\proje.md5\bin\Release\proje.md5.pdb
+C:\Users\erenk\source\repos\ElektrikDunyasi\proje.md5\obj\Release\proje.md5.csprojAssemblyReference.cache
+C:\Users\erenk\source\repos\ElektrikDunyasi\proje.md5\obj\Release\proje.md5.csproj.CoreCompileInputs.cache
+C:\Users\erenk\source\repos\ElektrikDunyasi\proje.md5\obj\Release\proje.md5.dll
+C:\Users\erenk\source\repos\ElektrikDunyasi\proje.md5\obj\Release\proje.md5.pdb

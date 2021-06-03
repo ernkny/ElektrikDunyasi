@@ -1,0 +1,5 @@
+C:\Users\erenk\source\repos\ElektrikDunyasi\proje.md5\bin\Debug\proje.md5.dll
+C:\Users\erenk\source\repos\ElektrikDunyasi\proje.md5\bin\Debug\proje.md5.pdb
+C:\Users\erenk\source\repos\ElektrikDunyasi\proje.md5\obj\Debug\proje.md5.csproj.CoreCompileInputs.cache
+C:\Users\erenk\source\repos\ElektrikDunyasi\proje.md5\obj\Debug\proje.md5.dll
+C:\Users\erenk\source\repos\ElektrikDunyasi\proje.md5\obj\Debug\proje.md5.pdb

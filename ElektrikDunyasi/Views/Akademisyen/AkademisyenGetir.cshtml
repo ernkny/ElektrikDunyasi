@@ -1,0 +1,48 @@
+﻿@model ElektrikDunyasi.Models.Entity.Akedemisyen
+@{
+    ViewBag.Title = "AkademisyenGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("AkademisyenGuncelle", "Akademisyen", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group container">
+        @Html.TextBoxFor(ak => ak.AkedemiId, new { style = "display:none;" })
+        <label>Başlık</label>
+        @Html.TextBoxFor(ak => ak.Baslik, new { @class = "form-control", })
+        <br />
+        <label>Ekleyen</label>
+        @Html.TextBoxFor(ak => ak.Ekleyen, new { @class = "form-control", })
+        <br />
+        <label>Keywords</label>
+        @Html.TextBoxFor(ak => ak.Keywords, new { @class = "form-control", })
+        <br />
+        <label>Tarih</label>
+        @Html.TextBoxFor(ak => ak.Tarih, new { @class = "form-control", @type = "datetime-local" })
+        <br />
+
+
+
+
+        <label>İçerik</label>
+        @Html.TextAreaFor(ak => ak.Yazi, new { @class = "form-control", @id = "yazi" })
+        <br />
+
+
+    </div>
+    <div class="container">
+        <button onclick="return confirm('Güncellemek İstiyor musunuz?')" class=" btn btn-warning">Güncelle</button>
+    </div>
+}
+
+
+
+<script src="~/Scripts/ckeditor/ckeditor.js">
+
+</script>
+<script>
+    CKEDITOR.replace('yazi');
+</script>
+

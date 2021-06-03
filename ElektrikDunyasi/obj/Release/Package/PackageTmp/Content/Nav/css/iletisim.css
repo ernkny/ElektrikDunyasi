@@ -1,0 +1,221 @@
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .iletisim {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    
+    .iletisim>* {
+        flex: 1 100%;
+    }
+    
+    @media all and (min-width: 600px) {
+        .aside {
+            flex: 1 0 0;
+        }
+    }
+    
+    @media all and (min-width: 768px) {
+        .iletisim-2 {
+            flex: 2 0px;
+        }
+        .iletisim-1 {
+            order: 1;
+        }
+        .iletisim-2 {
+            order: 2;
+        }
+    }
+    
+    .iletisim-1 {
+        text-align: left;
+        background: rgba(255, 0, 0, 0);
+        box-shadow: 0px 1px 3px #203647;
+        padding: 12px;
+        font-size: 16px;
+        color: black;
+        background: rgba(255, 255, 255, 0.781);
+    }
+    
+    .iletisim-1 a {
+        color: black;
+        font-size: 16px;
+    }
+    
+    .iletisim-1 i {
+        color: red;
+        margin-right: 6px;
+        font-size: 18px;
+    }
+    
+    .iletisim-alt-baslik {
+        font-size: 16px;
+        color: black;
+    }
+    
+    .iletisim-1 h5,
+    .iletisim-2 h5 {
+        color: #203647;
+    }
+    
+    .iletisim-2 {
+        background: rgba(255, 217, 0, 0);
+        box-shadow: 0px 1px 3px #203647;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.781);
+    }
+    
+    .iletisim-3 {
+        background: rgba(255, 105, 180, 0);
+        box-shadow: 0px 1px 3px #203647;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.781);
+    }
+    
+    .main-iletisim {
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-bottom: 35px;
+    }
+    
+    .iletisim-group {
+        display: flex;
+        margin-bottom: 15px;
+    }
+    
+    .iletisim-group-2 input {
+        margin-bottom: 15px;
+    }
+    
+    .iletisim-first {
+        margin-right: 10px;
+    }
+    
+    .iletisim-2 textarea {
+        resize: none;
+        padding: 10px;
+        border: 1px solid #203647;
+    }
+    
+    .iletisim-2 textarea:focus {
+        outline: none;
+    }
+    
+    .iletisim-2 input {
+        padding: 5px;
+        font-size: 14px;
+        border: none;
+        border-radius: 0px;
+        border: 1px solid #203647;
+        /* box-shadow: 0px 1px 3px #203647; */
+        background-color: white;
+    }
+    
+    .iletisim-gonder {
+        padding: 8px 12px;
+        background-color: #203647;
+        color: white;
+        border: none;
+        box-shadow: 0px 1px 3px black;
+        margin-top: 7px;
+    }
+    
+    .iletisim-gonder:hover {
+        background-color: white;
+        color: #203647;
+    }
+    
+    .iletisim-2 input:focus {
+        outline: none;
+    }
+    
+    @media screen and (min-width:280px) {
+        .iletisim-1 {
+            margin-bottom: 35px;
+        }
+        .iletisim-2 {
+            margin: 0px;
+        }
+        .iletisim-2 input {
+            padding: 8px;
+        }
+        .iletisim-3 {
+            padding: 5px;
+        }
+        .responsive-iframe {
+            width: 100%;
+            height: 320px;
+        }
+    }
+    
+    @media screen and (min-width:576px) {
+        .iletisim-1,
+        .iletisim-2,
+        .iletisim-3 {
+            padding: 15px;
+        }
+        .iletisim-1 {
+            margin-bottom: 35px;
+        }
+    }
+    
+    @media screen and (min-width:768px) {
+        .iletisim-1 {
+            margin-bottom: 0px;
+        }
+        .iletisim-2 {
+            margin-left: 35px;
+        }
+        .iletisim-2 .iletisim-gonder {
+            margin-top: 20px;
+        }
+        .responsive-iframe {
+            height: 250px;
+        }
+    }
+    
+    @media screen and (min-width:992px) {
+        .iletisim-2 {
+            margin-left: 35px;
+            margin-right: 0px;
+            padding: 10px;
+        }
+        .iletisim-1 {
+            margin-bottom: 0px;
+            padding: 10px;
+        }
+        .iletisim-3 {
+            margin-top: 0px;
+            padding: 10px;
+        }
+        .responsive-iframe {
+            width: 100%;
+            height: 300px;
+        }
+    }
+    
+    @media screen and (min-width:1200px) {
+        .iletisim-1 {
+            margin-bottom: 0px;
+        }
+        .iletisim-3 {
+            margin-top: 0px;
+        }
+        .responsive-iframe {
+            width: 100%;
+            height: 300px;
+        }
+        .iletisim-2 {
+            margin-left: 35px;
+        }
+        .iletisim-gonder {
+            margin-top: 25px;
+        }
+        .iletisim-2 input {
+            font-size: 18px;
+        }
+    }

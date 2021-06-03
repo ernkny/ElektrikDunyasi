@@ -1,0 +1,70 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model ElektrikDunyasi.Models.ViewModel
+@{
+    ViewBag.Title = "Akademisyenden";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<head>
+
+    <link rel="stylesheet" href="~/Content/Nav/css/editorden.css">
+
+</head>
+<div class="container main-editorden">
+    <div class="editorden">
+        <aside class="aside editorden-sol">
+            @foreach (var item in Model.sdtimages.Where(m => m.Id == 2))
+            {
+
+
+                <div class="edit-foto">
+                    <img class="img-fluid" src="@item.ImageUrl.Replace("..","")" alt="">
+                </div>
+            }
+
+            @foreach (var item in Model.eDergi)
+            {
+                <div class="edit-dergi">
+                    <a target="_blank" href="/Home/Dergi">
+                        <img class="img-fluid" src="@item.EDergiResimUrl"
+                    </a>
+                    <a target="_blank" href="/Home/Dergi"><button class="oku">Şimdi Oku</button></a>
+                </div>
+            }
+        </aside>
+        <article class="editorden-sag">
+            <div class="container edit-parent">
+                <div class="row">
+                    @foreach (var item in Model.Akademisyens)
+                    {
+
+
+                        <div class="edit-card" style="width:100%;">
+                            <a href="/Home/Akademisyen/@item.AkedemiId">
+                                <span class="edit-basliks">
+                                    @item.Baslik
+                                </span>
+                            </a>
+                            <p class="edit-alt-icerik">
+                                @{string metin = System.Text.RegularExpressions.Regex.Replace(item.Yazi, @"<(.|\n)*?>", string.Empty);
+                                    int c; if (metin.Length >= 70) { c = 70; } else { c = metin.Length; } }
+                                @Html.Raw(metin.Substring(0, c)) ...
+                            </p>
+                            <a href="/Home/Akademisyen/@item.AkedemiId"><button class="edit-oku">Devamını Oku</button></a>
+                        </div>
+                    }
+                </div>
+
+            </div>
+            <div class="conainer d-flex justify-content-center main-page-number">
+                @Html.PagedListPager((IPagedList)Model.Akademisyens, page => Url.Action("Akademisyenden", new { page }), new PagedListRenderOptions()
+     {
+         LiElementClasses = new List<string> { "page-number" }
+     })
+
+            </div>
+        </article>
+    </div>
+</div>
+

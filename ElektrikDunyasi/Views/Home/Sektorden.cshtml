@@ -1,0 +1,115 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model ElektrikDunyasi.Models.ViewModel
+@{
+    ViewBag.Title = "Sektorden";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" href="~/Content/Nav/css/haberler.css">
+</head>
+<div class="container main-haber">
+    <div class="haberler">
+        <!-- Haberler -->
+        <article class="haber-sol">
+            @foreach (var item in Model.sektors)
+            {
+
+
+                <div class="haber-alt">
+                    <aside class="aside haber-foto">
+                        <a href="/Home/Sektor/@item.SektorId">
+                            <img class="img-fluid" src="@item.ImageUrl" alt="@item.Keywords">
+                        </a>
+                    </aside>
+                    <article class="haber-icerik">
+                        <a href="/Home/Sektor/@item.SektorId">
+                            <span class="haber-basliks">
+                                @{int a; if (item.Baslik.Length > 92) { a = 92; } else { a = item.Baslik.Length; }
+                                }
+                                @item.Baslik.Substring(0, a)
+                            </span>
+                        </a>
+
+                        <p class="haber-alt-icerik">
+
+                            @{string metin = System.Text.RegularExpressions.Regex.Replace(item.Yazi, @"<(.|\n)*?>", string.Empty);
+                                int c; if (metin.Length >= 317) { c = 317; } else { c = metin.Length; } }
+                            @Html.Raw(metin.Substring(0, c)) ...
+                        </p>
+                        <a href="/Home/Sektor/@item.SektorId" class=" devam-oku">Devamını Oku</a>
+                    </article>
+                </div>
+            }
+
+        </article>
+
+        <aside class="aside haber-sag">
+            <!-- En Çok Okunanlar -->
+            <div class="haber-en-cok">
+                <div class="main-hab">
+                    <div class="panel ">
+                        <div class="panel-heading">
+                            <!-- EN ÇOK OKUNAN KAYAN HABERLER BAŞLIĞI BURDAN DEĞİŞTİRLİYOR -->
+                            <div class="hab" style="border-bottom-color: #636363; border-left-color: #636363; color: #636363;">
+                                SEKTÖRDEN ÖNE ÇIKANLAR
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="row">
+                                <ul class="demo1 ">
+                                    @foreach (var item in Model.sektor)
+                                    {
+
+                                        <li class="news-item">
+
+                                            <a href="/Home/Sektor/@item.SektorId">
+                                                <table cellpadding="4">
+                                                    <tr>
+                                                        <td style="border-bottom-color: #636363;"><img src="@item.ImageUrl" width="60" class="" /></td>
+                                                        <td style="border-bottom-color:#636363;">
+                                                            <span class="haber-floating-baslik">
+                                                                @{int a; if (item.Baslik.Length > 27) { a = 27; } else { a = item.Baslik.Length; }
+                                                                }
+                                                                @item.Baslik.Substring(0, a) ...
+                                                            </span>
+                                                            <p class="vertical-icerik">
+
+                                                                @{string metin = System.Text.RegularExpressions.Regex.Replace(item.Yazi, @"<(.|\n)*?>", string.Empty);
+                                                                    int c; if (metin.Length >= 81) { c = 81; } else { c = metin.Length; } }
+                                                                @Html.Raw(metin.Substring(0, c)) ...
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </a>
+
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-haber-dergi">
+                <div class="haber-dergi">
+                    @foreach (var item in Model.eDergi)
+                    {
+                        <a target="_blank" href="/Home/Dergi"><img class="img-fluid" src="@item.EDergiResimUrl" alt=""></a>
+                        <a target="_blank" href="/Home/Dergi"><button class="oku w-100">Şimdi Oku</button></a>
+                    }
+                </div>
+            </div>
+
+        </aside>
+    </div>
+</div>
+<div class="conainer d-flex justify-content-center main-page-number">
+    @Html.PagedListPager((IPagedList)Model.sektors, page => Url.Action("Sektorden", new { page }), new PagedListRenderOptions()
+    {
+        LiElementClasses = new List<string> { "page-number" }
+    })
+</div>
+

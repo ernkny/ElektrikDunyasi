@@ -1,0 +1,35 @@
+﻿@model ElektrikDunyasi.Models.Entity.Hakkimizda
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("AboutGuncelle", "About", FormMethod.Post))
+{
+
+<div class="form-group container " style="margin-top:150px">
+    <h2 style="text-align:center; margin-bottom:40px; font-size:40px;font-weight:bold">Hakkımızda</h2>
+    
+    @Html.TextAreaFor(h => h.HakkimizdaIcerik, new { @class = "form-control ", @id = "hakkimizda" })
+
+
+
+    <div class="container mt-3">
+        <button onclick = "return confirm('Güncellemek İstiyor musunuz?')" class=" btn btn-warning">Güncelle</button>
+    </div>
+
+</div>
+}
+
+
+
+<script src="~/Scripts/ckeditor/ckeditor.js">
+
+</script>
+<script>
+    CKEDITOR.replace('hakkimizda');
+</script>
+
+

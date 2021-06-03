@@ -1,0 +1,45 @@
+﻿
+@using PagedList;
+@using PagedList.Mvc;
+@using ElektrikDunyasi.Models.Entity
+@model PagedList.IPagedList<Dergi>
+@{
+    ViewBag.Title = "Arsiv";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/Content/Nav/css/arsiv.css">
+</head>
+
+<div id="wrapper">
+    <div class="container d-flex justify-content-center main-page-number">
+        <div class="ort-pn">
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-2 col-3">
+                    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Arsiv", new { page }), new PagedListRenderOptions()
+      {
+          LiElementClasses = new List<string> { "page-number" }
+      })
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container arsiv-main">
+        <div class="row ust-arsiv">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <div class="dergi-kapak text-center">
+                        <a target="_blank" href="/Home/DergiPdf/@item.DergiId">
+                            <img class="img-fluid" src="@item.ImageUrl" alt="">
+                        </a>
+                        <p>@item.DergiBaslik</p>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+

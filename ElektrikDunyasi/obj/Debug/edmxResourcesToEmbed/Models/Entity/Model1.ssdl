@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DergiElektrikModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AboneInfo">
+    <Key>
+      <PropertyRef Name="AboneId" />
+    </Key>
+    <Property Name="AboneId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AboneName" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Tarih" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="Akedemisyen">
+    <Key>
+      <PropertyRef Name="AkedemiId" />
+    </Key>
+    <Property Name="AkedemiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar(max)" />
+    <Property Name="Yazi" Type="varchar(max)" />
+    <Property Name="Ekleyen" Type="varchar(max)" />
+    <Property Name="Tarih" Type="datetime2" Precision="7" />
+    <Property Name="Keywords" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Telefon" Type="varchar(max)" />
+    <Property Name="Faks" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Dergi">
+    <Key>
+      <PropertyRef Name="DergiId" />
+    </Key>
+    <Property Name="DergiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DergiBaslik" Type="nvarchar(max)" />
+    <Property Name="Tarih" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="DergiUrl" Type="nvarchar(max)" />
+    <Property Name="DergiDeleteUrl" Type="nvarchar(max)" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" />
+    <Property Name="DeleteImageUrl" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="EDergi">
+    <Key>
+      <PropertyRef Name="EDergiId" />
+    </Key>
+    <Property Name="EDergiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EDegiUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EDergiResimUrl" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Editor">
+    <Key>
+      <PropertyRef Name="EditorId" />
+    </Key>
+    <Property Name="EditorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="nvarchar(max)" />
+    <Property Name="Icerik" Type="nvarchar(max)" />
+    <Property Name="Tarih" Type="datetime2" Precision="7" />
+    <Property Name="Keywords" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ElektKunye">
+    <Key>
+      <PropertyRef Name="KunyeId" />
+    </Key>
+    <Property Name="KunyeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Imtyaz" Type="varchar(max)" />
+    <Property Name="Sormlu" Type="varchar(max)" />
+    <Property Name="YayinDanisman" Type="varchar(max)" />
+    <Property Name="YayinKrl" Type="varchar(max)" />
+    <Property Name="Reklam" Type="varchar(max)" />
+    <Property Name="ReklamHalk" Type="varchar(max)" />
+    <Property Name="Guney" Type="varchar(max)" />
+    <Property Name="Kurye" Type="varchar(max)" />
+    <Property Name="Ceviri" Type="varchar(max)" />
+    <Property Name="Dogu" Type="varchar(max)" />
+    <Property Name="Iran" Type="varchar(max)" />
+    <Property Name="Misir" Type="varchar(max)" />
+    <Property Name="Holland" Type="varchar(max)" />
+    <Property Name="Poland" Type="varchar(max)" />
+    <Property Name="Hukuk" Type="varchar(max)" />
+    <Property Name="Dagitim" Type="varchar(max)" />
+    <Property Name="Baski" Type="varchar(max)" />
+    <Property Name="Yayin" Type="varchar(max)" />
+    <Property Name="Type" Type="varchar(max)" />
+    <Property Name="Year" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Haberler">
+    <Key>
+      <PropertyRef Name="HaberId" />
+    </Key>
+    <Property Name="HaberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageId" Type="int" />
+    <Property Name="HaberBaslik" Type="nvarchar" MaxLength="255" />
+    <Property Name="HaberYazi" Type="nvarchar(max)" />
+    <Property Name="HaberEkleyen" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" />
+    <Property Name="Tarih" Type="datetime2" Precision="7" />
+    <Property Name="DeleteUrl" Type="nvarchar(max)" />
+    <Property Name="Keywords" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Hakkimizda">
+    <Key>
+      <PropertyRef Name="HakkimizdaId" />
+    </Key>
+    <Property Name="HakkimizdaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HakkimizdaIcerik" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="LeftBanner">
+    <Key>
+      <PropertyRef Name="LeftBannerId" />
+    </Key>
+    <Property Name="LeftBannerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageUrl" Type="varchar(max)" />
+    <Property Name="DeleteUrl" Type="varchar(max)" />
+    <Property Name="LinkUrl" Type="varchar(max)" />
+    <Property Name="Tarih" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="LoginAdmin">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar(max)" />
+    <Property Name="UserPassword" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="MainBanner">
+    <Key>
+      <PropertyRef Name="MainBannerId" />
+    </Key>
+    <Property Name="MainBannerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageUrl" Type="varchar(max)" />
+    <Property Name="LinkUrl" Type="varchar(max)" />
+    <Property Name="Tarih" Type="datetime2" Precision="7" />
+    <Property Name="MainBannerBaslik" Type="varchar(max)" />
+    <Property Name="DeleteUrl" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Makaleler">
+    <Key>
+      <PropertyRef Name="MakaleId" />
+    </Key>
+    <Property Name="MakaleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MakaleBaslik" Type="nvarchar(max)" />
+    <Property Name="Ekleyen" Type="nvarchar" MaxLength="20" />
+    <Property Name="Tarih" Type="datetime2" Precision="7" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" />
+    <Property Name="DeleteUrl" Type="nvarchar(max)" />
+    <Property Name="MakaleYazi" Type="nvarchar(max)" />
+    <Property Name="Keywords" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="RightBanner">
+    <Key>
+      <PropertyRef Name="RightBannerId" />
+    </Key>
+    <Property Name="RightBannerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageUrl" Type="varchar(max)" />
+    <Property Name="DeleteUrl" Type="varchar(max)" />
+    <Property Name="LinkUrl" Type="varchar(max)" />
+    <Property Name="Tarih" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="Rportaj">
+    <Key>
+      <PropertyRef Name="RportajId" />
+    </Key>
+    <Property Name="RportajId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RportajBaslik" Type="nvarchar(max)" />
+    <Property Name="RportajYazi" Type="nvarchar(max)" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" />
+    <Property Name="DeleteUrl" Type="nvarchar(max)" />
+    <Property Name="Tarih" Type="datetime2" Precision="7" />
+    <Property Name="Keywords" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Sektorden">
+    <Key>
+      <PropertyRef Name="SektorId" />
+    </Key>
+    <Property Name="SektorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar(max)" />
+    <Property Name="Yazi" Type="varchar(max)" />
+    <Property Name="ImageUrl" Type="varchar(max)" />
+    <Property Name="Tarih" Type="datetime2" Precision="7" />
+    <Property Name="DeleteUrl" Type="varchar(max)" />
+    <Property Name="Keywords" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="SiteYonetim">
+    <Key>
+      <PropertyRef Name="SıteID" />
+    </Key>
+    <Property Name="SıteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteBaslik" Type="varchar(max)" />
+    <Property Name="SiteAciklama" Type="varchar(max)" />
+    <Property Name="SiteKeywords" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="stdImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="ImageUrl" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Teknoloji">
+    <Key>
+      <PropertyRef Name="TeknoId" />
+    </Key>
+    <Property Name="TeknoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TeknoBaslik" Type="nvarchar(max)" />
+    <Property Name="TeknoYazi" Type="nvarchar(max)" />
+    <Property Name="Tarih" Type="datetime2" Precision="7" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" />
+    <Property Name="DeleteUrl" Type="nvarchar(max)" />
+    <Property Name="Keywords" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="DergiElektrikModelStoreContainer">
+    <EntitySet Name="AboneInfo" EntityType="Self.AboneInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Akedemisyen" EntityType="Self.Akedemisyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dergi" EntityType="Self.Dergi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EDergi" EntityType="Self.EDergi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Editor" EntityType="Self.Editor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ElektKunye" EntityType="Self.ElektKunye" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Haberler" EntityType="Self.Haberler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeftBanner" EntityType="Self.LeftBanner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginAdmin" EntityType="Self.LoginAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MainBanner" EntityType="Self.MainBanner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Makaleler" EntityType="Self.Makaleler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RightBanner" EntityType="Self.RightBanner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rportaj" EntityType="Self.Rportaj" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sektorden" EntityType="Self.Sektorden" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SiteYonetim" EntityType="Self.SiteYonetim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stdImages" EntityType="Self.stdImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teknoloji" EntityType="Self.Teknoloji" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

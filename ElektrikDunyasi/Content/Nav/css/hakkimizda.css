@@ -1,0 +1,108 @@
+.hakkimizda-main {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.hakkimizda-main>* {
+    flex: 1 100%;
+}
+
+.hakkimizda-sol {
+    text-align: left;
+    background: white;
+    margin-right: 50px;
+    box-shadow: 0px 1px 3px #203647;
+    padding: 20px;
+}
+
+.hakkimizda-sag .dergi {
+    box-shadow: 0px 1px 3px #203647;
+    padding: 7px;
+}
+
+.hakkimizda {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.hakkimizda-sol img {
+    margin-top: 25pz;
+}
+
+.hakkimizda-paragraf p {
+    text-indent: 25px;
+    text-align: justify;
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+@media all and (min-width: 600px) {
+    .aside {
+        flex: 1 0 0;
+    }
+}
+
+@media all and (min-width: 768px) {
+    .hakkimizda-sol {
+        flex: 3 0px;
+    }
+    .hakkimizda-sol {
+        order: 1;
+    }
+    .hakkimizda-sag {
+        order: 2;
+    }
+}
+
+@media screen and (min-width:200px) {
+    .hakkimizda-sol {
+        margin-right: 0px;
+        padding: 15px;
+        margin-bottom: 35px;
+    }
+    .hakkimizda-sag {
+        padding: 0px 50px;
+    }
+        .hakkimizda-sag .dergi {
+            padding: 5px;
+            background: rgba(255, 255, 255, 0.781);
+            margin-bottom: 35px;
+        }
+    .hakkimizda-sag .dergi img {
+        width: 100%;
+    }
+    .hakkimizda-paragraf p {
+        font-size: 16px;
+    }
+   
+}
+
+@media screen and (min-width:450px) {
+    .hakkimizda-sag {
+        padding: 0px 100px;
+    }
+    .hakkimizda-img {
+        padding: 0px 70px;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .hakkimizda-sag {
+        padding: 0px;
+    }
+    .hakkimizda-sol {
+        margin-right: 35px;
+    }
+    .hakkimizda-paragraf p {
+        font-size: 14px;
+    }
+    .hakkimizda-sag .dergi {
+        padding: 7px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .hakkimizda-sag .dergi {
+        padding: 7px;
+    }
+}

@@ -1,0 +1,75 @@
+﻿@model ElektrikDunyasi.Models.ViewModel
+@{
+    ViewBag.Title = "Editor";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<head>
+
+    <link rel="stylesheet" href="~/Content/Nav/css/haberler.css">
+    <link rel="stylesheet" href="~/Content/Nav/css/editorden-page.css">
+
+</head>
+<div class="container haber-page-main">
+
+    <div class="haber-page">
+
+        <article class="page-sol">
+
+            <div class="alt-page">
+
+                @foreach (var item in Model.Editors.Where(h => h.EditorId == Model.id))
+                {
+
+
+                    <div class="alt-page">
+                        <h3>@item.Baslik</h3>
+                        <div class="alt-cizgi "></div>
+                        <span class="page-tarih "><i class="fas fa-calendar-alt "></i>@item.Tarih.ToString().Substring(0, 10)</span>
+
+                        <p class="text-justify ">
+                            @Html.Raw(item.Icerik)
+                        </p>
+
+                    </div>
+                }
+
+
+            </div>
+
+        </article>
+
+        <aside class="aside page-sag ">
+
+            <div class="edit-foto">
+                @foreach (var item in Model.sdtimages.Where(m => m.Id == 1))
+                {
+                   
+                        <img class="img-fluid" src=" @item.ImageUrl.Replace("..","")" alt="">
+                        }
+                </div>
+
+                    <div class="main-page-dergi ">
+
+                        <div class="page-dergi ">
+                            
+                            @foreach (var item in Model.eDergi)
+                            {
+                                <a target="_blank" href="/Home/Dergi"><img class="img-fluid" src="@item.EDergiResimUrl.Replace("..","")" alt=""></a>
+                                <a target="_blank" href="/Home/Dergi"><button class="oku w-100">Şimdi Oku</button></a>
+                            }
+
+                        </div>
+
+                    </div>
+
+</aside>
+
+    </div>
+
+</div>
+
+
+
+
+

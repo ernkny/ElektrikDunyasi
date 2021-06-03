@@ -1,0 +1,47 @@
+﻿@using ElektrikDunyasi.Models.Entity;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Teknoloji>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container ">
+    <h1 style="padding:10px; font-family:bold; font-weight:700; text-align:center">Teknoloji</h1>
+    <a style="margin-bottom:15px" href="/Teknoloji/TeknolojiEkle/" class="btn btn-primary">Yeni Teknoloji Ekle</a>
+    <table style="border: 1px solid black;" class="table table-bordered bg-light">
+        <tr>
+            <th style="font-size:20px; font-weight:bold;">*</th>
+            <th>Teknoloji Başlığı</th>
+            <th>Keywords</th>
+            <th>Teknoloji Resmi</th>
+            <th>Tarih</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+
+
+
+        </tr>
+        @{int i = 1; }
+        @foreach (var tek in Model)
+        {
+    <tr>
+        <td style="font-weight:bold;">@i</td>
+        <td style="width:35%">@tek.TeknoBaslik </td>
+        <td style="width:25%;">@tek.Keywords </td>
+        <td style="width:15%;"><img style="width:60px;height:60px" src="@tek.ImageUrl" alt="@tek.Keywords" /></td>
+        <td style="width:15%">@tek.Tarih</td>
+        <td>@Html.ActionLink("Sil", "TeknoSil", new { id = tek.TeknoId }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz?')" })</td>
+
+        <td style="width:5%"><a href="/Teknoloji/TeknoGetir/@tek.TeknoId " class="btn btn-success">Güncelle</a></td>
+    </tr>
+            i++;
+        }
+
+
+    </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+</div>
+

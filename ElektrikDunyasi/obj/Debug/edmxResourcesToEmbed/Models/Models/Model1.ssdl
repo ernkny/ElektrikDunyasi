@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DergiElektrikModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Haberler">
+    <Key>
+      <PropertyRef Name="HaberId" />
+    </Key>
+    <Property Name="HaberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageId" Type="int" />
+    <Property Name="HaberBaslik" Type="nvarchar(max)" />
+    <Property Name="HaberYazi" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Images">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Rportaj">
+    <Key>
+      <PropertyRef Name="RportajId" />
+    </Key>
+    <Property Name="RportajId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageId" Type="int" />
+    <Property Name="RportajBaslik" Type="nvarchar(max)" />
+    <Property Name="RportajYazi" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Urun">
+    <Key>
+      <PropertyRef Name="UrunId" />
+    </Key>
+    <Property Name="UrunId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageId" Type="int" />
+    <Property Name="UrunBaslik" Type="nvarchar(max)" />
+    <Property Name="UrunYazi" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_Haberler_Images">
+    <End Role="Images" Type="Self.Images" Multiplicity="0..1" />
+    <End Role="Haberler" Type="Self.Haberler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Images">
+        <PropertyRef Name="ImageId" />
+      </Principal>
+      <Dependent Role="Haberler">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rportaj_Images">
+    <End Role="Images" Type="Self.Images" Multiplicity="0..1" />
+    <End Role="Rportaj" Type="Self.Rportaj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Images">
+        <PropertyRef Name="ImageId" />
+      </Principal>
+      <Dependent Role="Rportaj">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urun_Images">
+    <End Role="Images" Type="Self.Images" Multiplicity="0..1" />
+    <End Role="Urun" Type="Self.Urun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Images">
+        <PropertyRef Name="ImageId" />
+      </Principal>
+      <Dependent Role="Urun">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DergiElektrikModelStoreContainer">
+    <EntitySet Name="Haberler" EntityType="Self.Haberler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rportaj" EntityType="Self.Rportaj" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Urun" EntityType="Self.Urun" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Haberler_Images" Association="Self.FK_Haberler_Images">
+      <End Role="Images" EntitySet="Images" />
+      <End Role="Haberler" EntitySet="Haberler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rportaj_Images" Association="Self.FK_Rportaj_Images">
+      <End Role="Images" EntitySet="Images" />
+      <End Role="Rportaj" EntitySet="Rportaj" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urun_Images" Association="Self.FK_Urun_Images">
+      <End Role="Images" EntitySet="Images" />
+      <End Role="Urun" EntitySet="Urun" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

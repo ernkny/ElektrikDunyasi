@@ -1,0 +1,720 @@
+            /* ********************BODY***********************************/
+            
+            html {
+                min-height: 100%;
+            }
+            
+            body {
+                background: hsla(0, 0%, 87%, 1);
+                background: radial-gradient(circle, hsla(0, 0%, 87%, 1) 0%, hsla(202, 45%, 74%, 1) 100%);
+                background: -moz-radial-gradient(circle, hsla(0, 0%, 87%, 1) 0%, hsla(202, 45%, 74%, 1) 100%);
+                background: -webkit-radial-gradient(circle, hsla(0, 0%, 87%, 1) 0%, hsla(202, 45%, 74%, 1) 100%);
+                filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#DFDFDF", endColorstr="#9EC4DA", GradientType=1);
+                font-family: sans-serif;
+            }
+            
+            * {
+                box-sizing: border-box;
+                padding: 0px;
+                margin: 0px;
+            }
+            /****************************NAVBAR****************************/
+            
+            @media screen and (max-width:768px) {
+                #logo2 {
+                    display: none;
+                }
+            }
+            
+            @media all and (max-width:1200px) {
+                #logo {
+                    display: none;
+                }
+                #logo2 {
+                    display: block;
+                    height: 24px;
+                }
+            }
+            
+            @media screen and (min-width:1200px) {
+                #logo2 {
+                    display: none;
+                }
+            }
+            
+            @media screen and (width:1200px) {
+                #logo2 {
+                    display: block;
+                }
+            }
+            
+            @media screen and (min-width:992px) and (max-width:1200px) {
+                .twitter {
+                    display: none;
+                }
+            }
+            
+            .navbar-brand {
+                margin-right: 0px;
+            }
+            
+            nav .container {
+                padding-right: 0px;
+                padding-left: 0px;
+            }
+            
+            .nav-link,
+            .dropdown-item {
+                color: #203647;
+                font-weight: bold;
+            }
+            
+            .nav-link:hover,
+            .dropdown-item:hover {
+                color: red;
+                background-color: rgba(255, 255, 255, 0);
+            }
+            
+            nav {
+                margin: 35px 0px;
+                background-color: white;
+            }
+            
+            .navbar-menu-icon1,
+            .navbar-menu-icon2,
+            .navbar-menu-icon3 {
+                width: 50px;
+                display: block;
+                border-bottom: 3px solid gray;
+            }
+            
+            .navbar-menu-icon1 {
+                margin-bottom: 5px;
+            }
+            
+            .navbar-menu-icon2 {
+                margin-bottom: 5px;
+            }
+            
+            .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+            }
+            /*=============================================================================================================================================================================================================================================================*/
+            /*================================================================================================================================================================================*/
+            /*=================================================================================================================================================================================================================================================================*/
+            /***************************1.BÖLÜM***************************/
+            
+            .wrapper {
+                display: flex;
+                flex-flow: row wrap;
+            }
+            
+            .wrapper>* {
+                flex: 1 100%;
+            }
+            
+            .main {
+                text-align: left;
+                background: rgba(255, 255, 255, 0.781);
+                box-shadow: 0px 1px 3px #203647;
+                margin-right: 35px;
+                padding: 15px;
+            }
+            
+            .aside-2 {
+                background: rgba(255, 255, 255, 0.781);
+                box-shadow: 0px 1px 3px #203647;
+                padding: 15px;
+            }
+            
+            .carousel-caption {
+                padding: 10px;
+                position: absolute;
+                bottom: 0px;
+                z-index: 10;
+                color: #fff;
+                text-align: left;
+                width: 100%;
+                background-color: rgba(26, 25, 25, 0.801);
+            }
+            
+            .carousel-caption p {
+                padding-bottom: 0px;
+                margin-bottom: 0px;
+                font-size: 20px;
+                font-weight: 500;
+            }
+            
+            @media all and (min-width: 600px) {
+                .aside {
+                    flex: 1 0 0;
+                }
+            }
+            
+            @media all and (min-width: 768px) {
+                .main {
+                    flex: 3 0px;
+                }
+                .aside-1 {
+                    order: 1;
+                }
+                .main {
+                    order: 2;
+                }
+                .aside-2 {
+                    order: 3;
+                }
+            }
+            
+            .oku {
+                background-color: #203647;
+                border: none;
+                color: white;
+                width: 100%;
+                padding: 6px;
+            }
+            
+            .oku:hover {
+                background-color: white;
+                color: #203647;
+                font-weight: bold;
+                box-shadow: 0px 1px 3px black;
+            }
+            
+            .dergi {
+                position: relative;
+                text-align: right;
+                font-weight: bold;
+            }
+            
+            @media screen and (min-width:250px) {
+                #logo {
+                    display: block;
+                }
+                #logo2 {
+                    display: none;
+                }
+            }
+            
+            @media screen and (min-width:320px) {
+                .aside-2 {
+                    box-shadow: none;
+                    padding: 0px 70px;
+                    background-color: rgba(0, 0, 0, 0);
+                }
+                .aside-2 img {
+                    width: 100%;
+                }
+                .dergi {
+                    box-shadow: 0px 1px 3px #203647;
+                    padding: 5px;
+                    background: rgba(255, 255, 255, 0.781);
+                }
+                .main {
+                    padding: 5px;
+                    margin-right: 0px;
+                    margin-top: 50px;
+                }
+                .orta {
+                    display: block;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                }
+                .media {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                }
+                .carousel-caption p {
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+                .carousel-caption {
+                    padding: 5px;
+                }
+                .doviz {
+                    display: none;
+                }
+                .sirket-baslik {
+                    font-size: 17px;
+                }
+                .sirket-adres,
+                .sirket-altbaslik {
+                    font-size: 13.5px;
+                    font-weight: 600;
+                }
+                footer a,
+                footer p {
+                    font-size: 13.5px;
+                    font-weight: 600;
+                }
+                .bulten-form {
+                    display: none;
+                }
+                .sol-banner {
+                    margin-bottom: 35px;
+                }
+                .sol-banner,
+                .sag-banner {
+                    padding: 7px;
+                    background: rgba(255, 255, 255, 0.781);
+                }
+                .sol-banner .carousel-inner .item img,
+                .sag-banner .carousel-inner .item img {
+                    height: 306px;
+                }
+            }
+            
+            @media screen and (min-width:375px) {
+                .orta {
+                    padding-right: 25px;
+                    padding-left: 25px;
+                }
+            }
+            
+            @media screen and (min-width:400px) {
+                .oku {
+                    padding: 8px 0px;
+                }
+                .aside-2 {
+                    padding: 0px 100px;
+                }
+                .carousel-caption p {
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+                    font-size: 14px;
+                    font-weight: 200;
+                }
+                .carousel-caption {
+                    padding: 10px;
+                }
+                .orta {
+                    padding: 0px 50px
+                }
+            }
+            
+            @media screen and (min-width:500px) {
+                .aside-2 {
+                    padding: 0px 130px;
+                }
+                .orta {
+                    padding-left: 0px;
+                    padding-right: 0px;
+                }
+                .sol-banner {
+                    margin-right: 17px;
+                    margin-bottom: 0px;
+                }
+                .sag-banner {
+                    margin-left: 17px;
+                }
+                .sol-banner .carousel-inner .item img,
+                .sag-banner .carousel-inner .item img {
+                    height: 222.2px;
+                }
+            }
+            
+            @media screen and (min-width:600px) {
+                .aside-2 {
+                    padding: 0px 140px;
+                }
+                .carousel-caption p {
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+                    font-size: 16px;
+                    font-weight: 200;
+                }
+                .carousel-caption {
+                    padding: 10px;
+                }
+            }
+            
+            @media screen and (min-width:768px) {
+                .main {
+                    margin-top: 0px;
+                    margin-right: 35px;
+                }
+                .aside-2 {
+                    padding: 5px;
+                    box-shadow: 0px 1px 3px #203647;
+                    background: rgba(255, 255, 255, 0.781);
+                }
+                .dergi {
+                    padding: 0px;
+                    box-shadow: none;
+                }
+                .aside-2 img {
+                    width: 100%;
+                    height: 218px;
+                }
+                .oku {
+                    padding: 3px;
+                }
+                .orta {
+                    display: block;
+                }
+                .sag-banner,
+                .sol-banner {
+                    padding: 5px;
+                    background: rgba(255, 255, 255, 0.781);
+                    margin-left: 0px;
+                    margin-right: 0px;
+                }
+                .sag-banner .carousel-inner,
+                .sol-banner .carousel-inner {
+                    width: 160px;
+                }
+                .sag-banner .carousel-inner .item img,
+                .sol-banner .carousel-inner .item img {
+                    height: 160px;
+                }
+                .bulten-form {
+                    margin: 0px 35px;
+                    padding: 10px;
+                    display: block;
+                }
+                .bulten-form h3 {
+                    font-size: 19px;
+                    margin-bottom: 10px;
+                }
+                .bulten-form .group {
+                    margin-bottom: 10px;
+                }
+                .bulten-form .group input {
+                    font-size: 14px;
+                }
+                .bulten-form .abone {
+                    margin-top: 5px;
+                    padding: 3px 7px;
+                }
+                .sirket-baslik {
+                    font-size: 17px;
+                }
+                .sirket-adres,
+                .sirket-altbaslik {
+                    font-size: 13.5px;
+                    font-weight: 600;
+                }
+                footer a,
+                footer p {
+                    font-size: 13.5px;
+                    font-weight: 600;
+                }
+                footer {
+                    height: 182px;
+                }
+                #wrapper {
+                    min-height: calc(100vh - 182px);
+                }
+            }
+            
+            @media screen and (min-width:992px) {
+                .aside-2 img {
+                    width: 100%;
+                    height: auto;
+                }
+                .main {
+                    padding: 7px;
+                }
+                .aside-2 {
+                    padding: 7px;
+                }
+                .oku {
+                    padding: 4px;
+                }
+                .sag-banner,
+                .sol-banner {
+                    padding: 7px;
+                }
+                .bulten-form {
+                    padding: 15px;
+                }
+                .sag-banner .carousel-inner,
+                .sol-banner .carousel-inner {
+                    width: 212.5px;
+                }
+                .sag-banner .carousel-inner .item img,
+                .sol-banner .carousel-inner .item img {
+                    height: 212.5px;
+                }
+                .bulten-form h3 {
+                    font-size: 22px;
+                    margin-bottom: 0px;
+                }
+                .bulten-form .group {
+                    margin-top: 20px;
+                    margin-bottom: 0px;
+                }
+                .bulten-form .group input {
+                    font-size: 17px;
+                }
+                .bulten-form .abone {
+                    margin-top: 20px;
+                    padding: 7px 10px;
+                }
+                .media {
+                    gap: 0px;
+                }
+                #logo {
+                    display: none;
+                }
+                #logo2 {
+                    display: block;
+                }
+                .carousel-caption p {
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+                    font-size: 20px;
+                    font-weight: 1500;
+                }
+                .carousel-caption {
+                    padding: 10px;
+                }
+                .doviz {
+                    display: block;
+                }
+                footer {
+                    height: 162px;
+                }
+                #wrapper {
+                    min-height: calc(100vh - 162px);
+                }
+            }
+            
+            @media screen and (min-width:1200px) {
+                .oku {
+                    padding: 7.5px;
+                    font-weight: bold;
+                }
+                .sag-banner .carousel-inner,
+                .sol-banner .carousel-inner {
+                    width: 258px;
+                }
+                .sag-banner .carousel-inner .item img,
+                .sol-banner .carousel-inner .item img {
+                    height: 258px;
+                }
+                .bulten-form {
+                    padding: 15px;
+                }
+                .bulten-form h3 {
+                    font-size: 28px;
+                    margin-bottom: 0px;
+                }
+                .bulten-form .group {
+                    margin-top: 25px;
+                    margin-bottom: 0px;
+                }
+                .bulten-form .group input {
+                    font-size: 18px;
+                }
+                .bulten-form .abone {
+                    margin-top: 30px;
+                    padding: 9px 12px;
+                    font-weight: bold;
+                }
+                #logo {
+                    display: block;
+                }
+                #logo2 {
+                    display: none;
+                }
+                .carousel-caption p {
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+                    font-size: 20px;
+                    font-weight: 200;
+                }
+                .carousel-caption {
+                    padding: 7px 10px 7px 10px;
+                }
+                footer {
+                    height: 145px;
+                }
+                #wrapper {
+                    min-height: calc(100vh - 145px);
+                }
+            }
+            
+            .alan-banner {
+                display: flex;
+                flex-flow: row wrap;
+                font-weight: bold;
+                text-align: center;
+            }
+            
+            .alan-banner>* {
+                flex: 1 100%;
+            }
+            
+            @media all and (min-width: 500px) {
+                .aside {
+                    flex: 1 0 0;
+                }
+            }
+            
+            @media all and (min-device-width: 500px) {
+                .bulten-form {
+                    flex: 3 0px;
+                }
+                .sol-banner {
+                    order: 1;
+                }
+                .bulten-form {
+                    order: 2;
+                }
+                .sag-banner {
+                    order: 3;
+                }
+            }
+            /*=========================================================================================================================================================
+    =====================================================================================================================================================
+    =============================================================================================================================================
+    ==============================================================================================================************************************************/
+            /******************************2.BÖLÜM******************************************/
+            
+            .orta {
+                margin-top: 35px;
+                margin-bottom: 35px;
+            }
+            
+            .sag-banner,
+            .sol-banner {
+                box-shadow: 0px 1px 3px #203647;
+            }
+            
+            .bulten-form {
+                box-shadow: 0px 1px 3px #203647;
+            }
+            
+            .group {
+                position: relative;
+            }
+            
+            .group input {
+                display: block;
+                border: none;
+                border-bottom: 2px solid white;
+                background-color: #20364700;
+                padding-left: 5px;
+                padding-bottom: 5px;
+                font-size: 20px;
+            }
+            
+            .group input::placeholder {
+                color: #203647c9;
+                font-style: italic;
+            }
+            
+            input:focus {
+                outline: none;
+            }
+            
+            .bar {
+                position: relative;
+                display: block;
+            }
+            
+            .bar:before,
+            .bar:after {
+                content: "";
+                height: 3px;
+                width: 0;
+                bottom: 0px;
+                position: absolute;
+                background: #203647;
+                transition: 0.2s ease all;
+                -moz-transition: 0.2s ease all;
+                -webkit-transition: 0.2s ease all;
+            }
+            
+            .bar:before {
+                left: 50%;
+            }
+            
+            .bar:after {
+                right: 50%;
+            }
+            
+            input:focus~.bar:before,
+            input:focus~.bar:after {
+                width: 50%;
+            }
+            
+            .abone {
+                background-color: #203647;
+                color: white;
+                border: none;
+                box-shadow: 0px 1px 3px black;
+            }
+            
+            .abone:hover {
+                color: #203647;
+                background-color: white;
+            }
+            
+            footer {
+                background-color: #203647;
+            }
+            
+            footer a {
+                color: white;
+            }
+            
+            footer p {
+                color: white;
+            }
+            
+            .sirket-baslik {
+                /* font-size: 18px; */
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            
+            .sirket-altbaslik {
+                /* font-size: 15px; */
+                margin-bottom: 5px;
+            }
+            
+            .sirket-adres {
+                /* font-size: 15px; */
+            }
+            
+            footer a i {
+                color: red;
+                margin-right: 5px;
+            }
+            
+            footer a:hover {
+                color: white;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            
+            .footer-container {
+                padding-top: 15px;
+                padding-right: 0px;
+                padding-left: 0px;
+                padding-bottom: 5px;
+            }
+            
+            .footer-iletisim,
+            .footer-media {
+                font-size: 15px;
+                margin-bottom: 5px;
+            }
+            
+            .tel,
+            .inst {
+                margin-top: 5px;
+            }
+            
+            .copyright {
+                background-color: #172a3a;
+                color: white;
+                font-size: 13px;
+                padding: 10px;
+                font-weight: 0;
+            }

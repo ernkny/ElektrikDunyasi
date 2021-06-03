@@ -1,0 +1,46 @@
+﻿@using ElektrikDunyasi.Models.Entity;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Dergi>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container ">
+    <h1 style="padding:10px; font-family:bold; font-weight:700; text-align:center">Dergi (309x416)</h1>
+    <a style="margin-bottom:15px" href="/Dergi/PdfEkle/" class="btn btn-primary">Dergi Pdf Ekle</a>
+    <table style="border: 1px solid black;" class="table table-bordered bg-light">
+        <tr>
+            <th style="font-size:20px; font-weight:bold;">*</th>
+            <th>Dergi Başlığı</th>
+            <th>Dergi Kapak</th>
+            <th>Kapak URL</th>
+            <th>Dergi Link</th>
+            <th>Tarih</th>
+            <th>Sil</th>
+
+
+
+
+        </tr>
+        @foreach (var derg in Model)
+        {
+            <tr>
+                <td></td>
+                <td style="width:20%">@derg.DergiBaslik </td>
+                <td style="width:20%"><img src="@derg.ImageUrl" style="width:60px;height:60px" /></td>
+                <td style="width:25%;">@derg.ImageUrl</td>
+                <td style="width:20%;"><a style="width:60px;height:60px" href="@derg.DergiUrl" alt="@derg.DergiBaslik" target="_blank">Dergi</a></td>
+                <td style="width:15%">@derg.Tarih</td>
+                <td>@Html.ActionLink("Sil", "DergiSil", new { id = derg.DergiId }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz?')" })</td>
+
+
+            </tr>
+        }
+
+
+    </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+</div>
+

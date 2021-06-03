@@ -1,0 +1,52 @@
+﻿@model ElektrikDunyasi.Models.Entity.Haberler
+    
+@{
+    ViewBag.Title = "HaberGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+
+
+@using (Html.BeginForm("HaberGuncelle", "Haberler", FormMethod.Post,new { enctype = "multipart/form-data" }))
+{
+
+<div class="form-group container">
+    @Html.TextBoxFor(h=>h.HaberId,new { style="display:none;"})
+    <label>Haber Başlık</label>
+    @Html.TextBoxFor(h => h.HaberBaslik, new { @class = "form-control", })
+    <br />
+    <label>Haber Ekleyen</label>
+    @Html.TextBoxFor(h => h.HaberEkleyen, new { @class = "form-control", })
+    <br />
+    <label>Haber Keywords</label>
+    @Html.TextBoxFor(h => h.Keywords, new { @class = "form-control", })
+    <br />
+    <label>Tarih</label>
+    @Html.TextBoxFor(h => h.Tarih, new { @class = "form-control", @type = "datetime-local" })
+    <br />
+    
+  
+
+
+    <label>Haber İçerik</label>
+    @Html.TextAreaFor(h => h.HaberYazi, new { @class = "form-control", @id = "haberyazi" })
+    <br />
+
+
+</div>
+    <div class="container">
+        <button onclick="return confirm('Güncellemek İstiyor musunuz?')" class =" btn btn-warning">Güncelle</button>
+    </div>
+}
+
+
+
+
+<script src="~/Scripts/ckeditor/ckeditor.js">
+
+</script>
+<script>
+    CKEDITOR.replace('haberyazi');
+</script>
+

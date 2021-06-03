@@ -1,0 +1,49 @@
+﻿@using ElektrikDunyasi.Models.Entity;
+@using PagedList;
+@using PagedList.Mvc;
+
+@model PagedList.IPagedList<Rportaj>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container ">
+    <h1 style="padding:10px; font-family:bold; font-weight:700; text-align:center">Röportajlar</h1>
+    <a style="margin-bottom:15px" href="/Roportaj/RoportajEkle/" class="btn btn-primary">Yeni Röportaj Ekle</a>
+    <table class="table table-bordered bg-light">
+        <tr>
+            <th style="font-size:20px; font-weight:bold;">*</th>
+            <th>Röportaj Başlığı</th>
+            <th>Keywords</th>
+            <th>Röportaj Resmi</th>
+            <th>Tarih</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+
+
+
+        </tr>
+
+        @{int i = 1; }
+        @foreach (var rop in Model)
+        {
+    <tr>
+
+        <td style="font-weight:bold;">@i</td>
+        <td style="width:35%;">@rop.RportajBaslik</td>
+        <td style="width:25%;">@rop.Keywords </td>
+        <td style="width:15%;"><img style="width:60px;height:60px" src="@rop.ImageUrl" alt="@rop.Keywords" /></td>
+        <td style="width:15%">@rop.Tarih</td>
+        <td>@Html.ActionLink("Sil", "RoportajSil", new { id = rop.RportajId }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz?')" })</td>
+        <td style="width:5%"><a href="/Roportaj/RoportajGetir/@rop.RportajId" class="btn btn-success">Güncelle</a></td>
+
+    </tr>
+
+            i++;
+        }
+
+
+    </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+</div>

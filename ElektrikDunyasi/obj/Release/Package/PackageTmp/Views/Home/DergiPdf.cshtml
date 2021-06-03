@@ -1,0 +1,15 @@
+﻿
+@model ElektrikDunyasi.Models.ViewModel
+@{
+    ViewBag.Title = "DergiPdf";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+
+<div class="container" style=" position: relative; margin: 50px auto; width: 100%; height: 1000px; padding:0px;">
+ 
+    @foreach (var item in Model.dergi.Where(m => m.DergiId == Model.id))
+    {
+        <iframe id="iframss"style="position: relative; width: 100%; height: 1000px;" src="@item.DergiUrl.Replace("..","")"></iframe>
+    }
+</div>

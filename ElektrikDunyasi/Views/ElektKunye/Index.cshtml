@@ -1,0 +1,87 @@
+﻿@model ElektrikDunyasi.Models.Entity.ElektKunye
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("KunyeGuncelle", "ElektKunye", FormMethod.Post))
+{
+
+<div class="form-group container " style="margin-top:150px">
+    <h2 style="text-align:center; margin-bottom:40px; font-size:40px;font-weight:bold">Künye</h2>
+
+    <label>İmtiyaz Sahibi Ve Genel Yayın Yönetmeni</label>
+    @Html.TextBoxFor(e => e.Imtyaz, new { @class = "form-control" })
+    <br />
+    <label>Sorumlu Yazı işleri Müdürü</label>
+    @Html.TextBoxFor(e => e.Sormlu, new { @class = "form-control" })
+    <br />
+    <label>Yayın Danışmanları</label>
+    @Html.TextBoxFor(e => e.YayinDanisman, new { @class = "form-control" })
+    <br />
+    <label>Yayın Kurulu</label>
+    @Html.TextBoxFor(e => e.YayinKrl, new { @class = "form-control" })
+    <br />
+    <label>Reklam Koordinatörü</label>
+    @Html.TextBoxFor(e => e.Reklam, new { @class = "form-control" })
+    <br />
+    <label>Reklam Ve Halkla İlişkiler Sorumlusu</label>
+    @Html.TextBoxFor(e => e.ReklamHalk, new { @class = "form-control" })
+    <br />
+    <label>Güneydoğu Anadolu Bölge Müdürü</label>
+    @Html.TextBoxFor(e => e.Guney, new { @class = "form-control" })
+    <br />
+    <label>Kurye Dağıtım</label>
+    @Html.TextBoxFor(e => e.Kurye, new { @class = "form-control" })
+    <br />
+    <label>Çeviri</label>
+    @Html.TextBoxFor(e => e.Ceviri, new { @class = "form-control" })
+    <br />
+    <label>Doğu Karadeniz Bölge Temsilcisi</label>
+    @Html.TextBoxFor(e => e.Dogu, new { @class = "form-control" })
+    <br />
+    <label>İran Temsilcisi</label>
+    @Html.TextBoxFor(e => e.Iran, new { @class = "form-control" })
+    <br />
+    <label>Mısır Temsilcisi</label>
+    @Html.TextBoxFor(e => e.Misir, new { @class = "form-control" })
+    <br />
+    <label>Hollanda Temsilcisi</label>
+    @Html.TextBoxFor(e => e.Holland, new { @class = "form-control" })
+    <br />
+
+    <label>Polanya Temsilcisi</label>
+    @Html.TextBoxFor(e => e.Poland, new { @class = "form-control" })
+    <br />
+    <label>Hukuk Danışmanlığı</label>
+    @Html.TextBoxFor(e => e.Hukuk, new { @class = "form-control" })
+    <br />
+    <label>Dağıtım</label>
+    @Html.TextBoxFor(e => e.Dagitim, new { @class = "form-control" })
+    <br />
+    <label>Baskı & Film Çıkışı</label>
+    @Html.TextBoxFor(e => e.Baski, new { @class = "form-control" })
+    <br />
+    <label>Yayına Hazırlayan Kuruluş</label>
+    @Html.TextBoxFor(e => e.Yayin, new { @class = "form-control" })
+    <br />
+    <label>Yayın Türü</label>
+    @Html.TextBoxFor(e => e.Type, new { @class = "form-control" })
+    <br />
+    <label>Yıl</label>
+    @Html.TextBoxFor(e => e.Year, new { @class = "form-control" })
+    <br />
+
+
+
+    <div class="container mt-3">
+        <button onclick="return confirm('Güncellemek İstiyor musunuz?')" class=" btn btn-warning">Güncelle</button>
+    </div>
+
+</div>
+
+
+
+
+}
+

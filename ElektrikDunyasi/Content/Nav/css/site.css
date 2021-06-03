@@ -1,0 +1,103 @@
+﻿                                    * {
+                                    box-sizing: border-box;
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                                
+                                .pagination a {
+                                    color: #555;
+                                }
+                                
+                                .panel ul {
+                                    padding: 0px;
+                                    margin: 0px;
+                                    list-style: none;
+                                }
+                                
+                                .news-item {
+                                    padding: 4px 14px;
+                                    margin: 0px;
+                                }
+                                
+                                .clearfix {
+                                    display: none;
+                                }
+                                
+                                .tek {
+                                    border-left: 10px solid rgb(138, 20, 20);
+                                    border-bottom: 2px solid rgb(138, 20, 20);
+                                    color: rgb(138, 20, 20);
+                                    font-weight: bold;
+                                    padding-left: 5px;
+                                }
+                                
+                                .rop {
+                                    border-left: 10px solid #203647;
+                                    border-bottom: 2px solid #203647;
+                                    color: #203647;
+                                    font-weight: bold;
+                                    padding-left: 5px;
+                                }
+                                
+                                .makale {
+                                    border-left: 10px solid purple;
+                                    border-bottom: 2px solid purple;
+                                    color: purple;
+                                    font-weight: bold;
+                                    padding-left: 5px;
+                                }
+                                
+                                ul li table tr td {
+                                    background-color: white;
+                                    font-size: 10px;
+                                }
+                                
+                                ul li table tr td img {
+                                    margin-right: 5px;
+                                }
+                                
+                                .container {
+                                    margin-top: 70px;
+                                }
+                                
+                                .panel-heading {
+                                    margin-bottom: 13px;
+                                }
+                                
+                                .floating-alt {
+                                    display: flex;
+                                    flex-flow: row wrap;
+                                    font-weight: bold;
+                                    text-align: center;
+                                }
+                                
+                                .foating-alt>* {
+                                    flex: 100%;
+                                }
+                                
+                                .orta-flat {
+                                    text-align: left;
+                                    background: deepskyblue;
+                                }
+                                
+                                .sol-ort {
+                                    background: gold;
+                                }
+                                
+                                .sag-ort {
+                                    background: hotpink;
+                                }
+                                
+                                .edit {
+                                    color: seagreen;
+                                    font-weight: bold;
+                                    border-left: 10px solid seagreen;
+                                    border-bottom: 2px solid seagreen;
+                                    padding-left: 5px;
+                                }
+                                
+                                .floating-baslik {
+                                    display: block;
+                                    color: black;
+                                    font-weight: bold;
+                                    font-size: 13px;

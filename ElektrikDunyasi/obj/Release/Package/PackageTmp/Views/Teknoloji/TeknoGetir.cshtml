@@ -1,0 +1,41 @@
+﻿@model  ElektrikDunyasi.Models.Entity.Teknoloji
+@{
+    ViewBag.Title = "TeknoGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Teknoloji", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group container">
+        @Html.TextBoxFor(t=>t.TeknoId, new { style = "display:none;" })
+        <label>Teknoloji Başlık</label>
+        @Html.TextBoxFor(t => t.TeknoBaslik, new { @class = "form-control", })
+        <br />
+        <label>Teknoloji Keywords</label>
+        @Html.TextBoxFor(t => t.Keywords, new { @class = "form-control", })
+        <br />
+        <label>Tarih</label>
+        @Html.TextBoxFor(t => t.Tarih, new { @class = "form-control", @type = "datetime-local" })
+        <br />
+
+        <label>Teknoloji İçerik</label>
+        @Html.TextAreaFor(t => t.TeknoYazi, new { @class = "form-control", @id = "teknoyazi" })
+        <br />
+
+
+    </div>
+    <div class="container">
+        <button onclick="return confirm('Güncellemek İstiyor musunuz?')" class=" btn btn-warning">Güncelle</button>
+    </div>
+}
+
+
+<script src="~/Scripts/ckeditor/ckeditor.js">
+
+</script>
+<script>
+    CKEDITOR.replace('teknoyazi');
+</script>
+
+

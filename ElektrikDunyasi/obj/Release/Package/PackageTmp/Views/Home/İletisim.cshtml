@@ -1,0 +1,56 @@
+﻿@using ElektrikDunyasi.Models.Entity;
+@model List<Contact>
+@{
+    ViewBag.Title = "İletisim";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" href="~/Content/Nav/css/iletisim.css">
+</head>
+<div class="container main-iletisim">
+    <div class="iletisim">
+        <aside class="aside iletisim-1">
+            <div class="iletisim-alt">
+                @foreach (var item in Model.Where(m => m.ContactId == 1))
+                {
+
+
+                    <h5 class="font-weight-bold">ELEKTRİK DÜNYASI DERGİSİ</h5>
+                    <p class="iletisim-alt-baslik">HCS Yayıncılık Matbaacılık Org. San. Ve Tic. Ltd. Şti.</p>
+                    <p><a class="link" href="https://www.google.com/maps/place/Elektrik+D%C3%BCnyas%C4%B1+Dergisi/41.05999,28.969605,17z/data=!4m5!3m4!1s0x0:0xfb0ba462d3b22134!8m2!3d41.05999!4d28.969605?hl=tr"><i class="fas fa-map-marker-alt"></i>@item.Address</a></p>
+                    <p><i class="fas fa-phone-alt"></i>@item.Telefon</p>
+                    <p><i class="fas fa-fax"></i>@item.Faks</p>
+                    <p><a class="link" href="mailto:info@elektrikdunyasi.com.tr"><i class="far fa-envelope"></i>@item.Email</a></p>
+                    <p><a class="link" href="https://www.facebook.com/elektrikdunyasidergisi/"><i class="fab fa-facebook-square"></i>elektrikdunyasidergisi</a></p>
+                    <p><a class="link" href="https://instagram.com/elektrikdunyasi?igshid=1meiztvhsow8r"><i class="fab fa-instagram"></i>elektrikdunyasi</a></p>
+                    <p><a class="link" href="https://twitter.com/elektrikdunyasi?s=20"><i class="fab fa-twitter"></i>elektrikdunyasi</a></p>
+                    <p><a class="link" href="https://www.youtube.com/channel/UCIstUNqkNe30TK0cW7NwUvw"><i class="fab fa-youtube"></i>elektrikdunyasi</a></p>
+                }
+            </div>
+        </aside>
+        <article class="iletisim-2">
+            <div class="iletisim-alt">
+                <form action="#">
+                    <h5 class="font-weight-bold">İLETİŞİM FORMU</h5>
+                    <div class="iletisim-group">
+                        <input class="w-50 iletisim-first" type="text" placeholder="Ad" name="" id="name">
+                        <input class="w-50" type="text" placeholder="Soyad" name="" id="surname">
+                    </div>
+                    <div class="iletisim-group-2">
+                        <input class="w-100" placeholder="E-mail" type="text" id="mail" required="required">
+                        <input class="w-100" type="text" placeholder="Konu" name="" id="subject" required="required">
+                        <textarea class="w-100" name="" id="" cols="30" rows="5"></textarea>
+                    </div>
+                    <button class="float-right iletisim-gonder">Gönder</button>
+                </form>
+            </div>
+        </article>
+
+    </div>
+</div>
+<div class="container iletisim-3" style="margin-bottom:35px">
+    <iframe class="responsive-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.3955013665673!2d28.967759615736874!3d41.06034672416736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfb0ba462d3b22134!2sElektrik%20D%C3%BCnyas%C4%B1%20Dergisi!5e0!3m2!1str!2str!4v1616927384936!5m2!1str!2str"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+

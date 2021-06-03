@@ -1,0 +1,33 @@
+﻿@model ElektrikDunyasi.Models.Entity.Contact
+@{
+    ViewBag.Title = "ContactGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("ContactGuncelle", "Contact", FormMethod.Post))
+{
+
+    <div class="form-group container">
+        <h2>İletişim Güncelle</h2>
+        <label>Telefon</label>
+        @Html.TextBoxFor(c => c.Telefon, new { @class = "form-control" })
+        <br />
+        <label>Faks</label>
+        @Html.TextBoxFor(c => c.Faks, new { @class = "form-control" })
+        <br />
+        <label>Adres</label>
+        @Html.TextBoxFor(c => c.Address, new { @class = "form-control" })
+        <br />
+        <label>Email</label>
+        @Html.TextBoxFor(c => c.Email, new { @class = "form-control" })
+        <br />
+
+
+    </div>
+    <div class="container">
+        <button class=" btn btn-warning">Güncelle</button>
+    </div>
+}
+

@@ -1,0 +1,47 @@
+﻿@using ElektrikDunyasi.Models.Entity;
+@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<RightBanner>
+@{
+    ViewBag.Title = "RightBanners";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container ">
+
+    <h1 style="font-family:bold;font-weight:700; text-align:center">Sağ Banner</h1>
+    <a style="margin-bottom:15px" href="/Banners/RightBannerEkle/" class="btn btn-primary">Sağ Banner Ekle</a>
+
+    <table class="table table-bordered bg-light">
+        <tr>
+            <th style="font-size:20px; font-weight:bold;">*</th>
+            <th>Banner Link</th>
+            <th>Banner Resmi</th>
+            <th>Tarih</th>
+            <th>Sil</th>
+
+
+
+        </tr>
+        @{int i = 1; }
+        @foreach (var right in Model)
+        {
+            <tr>
+                <td style="font-weight:bold;">@i</td>
+                <td style="width:40%"><a target="_blank" href="@right.LinkUrl">Sağ Banner Adres</a></td>
+                <td style="width:35%"><img style="width:60px;height:60px" src="@right.ImageUrl" alt="" /></td>
+                <td style="width:25%">@right.Tarih</td>
+                <td>@Html.ActionLink("Sil", "RightBannerSil", new { id = right.RightBannerId }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz?')" })</td>
+
+
+            </tr>
+            i++;
+        }
+
+
+    </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("rightBanners", new { page }))
+
+
+
+</div>

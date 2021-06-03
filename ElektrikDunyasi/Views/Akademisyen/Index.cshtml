@@ -1,0 +1,56 @@
+﻿@using ElektrikDunyasi.Models.Entity;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Akedemisyen>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container ">
+
+    <h1 style="font-family:bold;font-weight:700; text-align:center">Akademisyen</h1>
+    <a style="margin-bottom:15px" href="/Akademisyen/AkademisyenEkle/" class="btn btn-primary">İçerik Ekle</a>
+    <a style="margin-bottom:15px" href="/Akademisyen/ResimGetir/2" class="btn btn-info">Resim Güncelle</a>
+
+    <table class="table table-bordered bg-light">
+        <tr>
+            <th style="font-size:20px; font-weight:bold;">*</th>
+            <th>Başlık</th>
+            <th>Keywords</th>
+            <th>Yayınlayan</th>
+
+            <th>Tarih</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+
+
+        </tr>
+        @{int i = 1; }
+        @foreach (var aka in Model)
+        {
+
+            <tr>
+                <td style="font-weight:bold;">@i</td>
+                <td style="width:35%">@aka.Baslik </td>
+                <td style="width:25%">@aka.Keywords</td>
+                <td style="width:12%">@aka.Ekleyen</td>
+
+                <td style="width:10%">@aka.Tarih</td>
+                <td>@Html.ActionLink("Sil", "AkademisyenSil", new { id = aka.AkedemiId }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz?')" })</td>
+
+                <td style="width:5%"><a href="/Akademisyen/AkademisyenGetir/@aka.AkedemiId" class="btn btn-success">Güncelle</a></td>
+
+
+            </tr>
+            i++;
+        }
+
+
+    </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+
+
+
+</div>
+

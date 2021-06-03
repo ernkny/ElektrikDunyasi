@@ -1,0 +1,45 @@
+﻿@model ElektrikDunyasi.Models.Entity.Makaleler
+@{
+    ViewBag.Title = "MakaleGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("MakaleGuncelle", "Makaleler", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group container">
+        @Html.TextBoxFor(m => m.MakaleId, new { style = "display:none;" })
+        <label>Makale Başlık</label>
+        @Html.TextBoxFor(m => m.MakaleBaslik, new { @class = "form-control", })
+        <br />
+        <label>Makale Ekleyen</label>
+        @Html.TextBoxFor(m => m.Ekleyen, new { @class = "form-control", })
+        <br />
+        <label>Makale Keywords</label>
+        @Html.TextBoxFor(m => m.Keywords, new { @class = "form-control", })
+        <br />
+        <label>Tarih</label>
+        @Html.TextBoxFor(m => m.Tarih, new { @class = "form-control", @type = "datetime-local" })
+        <br />
+
+
+
+
+        <label>Makale İçerik</label>
+        @Html.TextAreaFor(m => m.MakaleYazi, new { @class = "form-control", @id = "makaleyazi" })
+        <br />
+
+
+    </div>
+    <div class="container">
+        <button onclick="return confirm('Güncellemek İstiyor musunuz?')" class=" btn btn-warning">Güncelle</button>
+    </div>
+}
+
+
+<script src="~/Scripts/ckeditor/ckeditor.js">
+
+</script>
+<script>
+    CKEDITOR.replace('makaleyazi');
+</script>

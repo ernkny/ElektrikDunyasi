@@ -1,0 +1,22 @@
+﻿@model ElektrikDunyasi.Models.Entity.stdImages
+@{
+    ViewBag.Title = "ResimGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("ResimGuncelle", "Editor", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+<div class="form-group container">
+    @Html.TextBoxFor(h => h.Id, new { style = "display:none;" })
+    <label>Resim Url</label>
+    @Html.TextBoxFor(h => h.ImageUrl, new { @class = "form-control", } )
+
+
+</div>
+    <div class="container">
+        <button onclick="return confirm('Güncellemek İstiyor musunuz?')" class=" btn btn-warning">Güncelle</button>
+    </div>
+}
+
+

@@ -1,0 +1,41 @@
+﻿@model ElektrikDunyasi.Models.Entity.Rportaj
+@{
+    ViewBag.Title = "RoportajGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Roportaj", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group container">
+        @Html.TextBoxFor(r => r.RportajId, new { style = "display:none;" })
+        <label>Röportaj Başlık</label>
+        @Html.TextBoxFor(r => r.RportajBaslik, new { @class = "form-control", })
+        <br />
+        <label>Röportaj Keywords</label>
+        @Html.TextBoxFor(r => r.Keywords, new { @class = "form-control", })
+        <br />
+        <label>Tarih</label>
+        @Html.TextBoxFor(r => r.Tarih, new { @class = "form-control", @type = "datetime-local" })
+        <br />
+
+        <label>Röportaj İçerik</label>
+        @Html.TextAreaFor(r => r.RportajYazi, new { @class = "form-control", @id = "rprtajyazi" })
+        <br />
+
+
+    </div>
+    <div class="container">
+        <button onclick="return confirm('Güncellemek İstiyor musunuz?')" class=" btn btn-warning">Güncelle</button>
+    </div>
+}
+
+
+<script src="~/Scripts/ckeditor/ckeditor.js">
+
+</script>
+<script>
+    CKEDITOR.replace('rprtajyazi');
+</script>
+
+

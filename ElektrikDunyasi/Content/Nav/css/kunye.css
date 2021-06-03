@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.kunye-parent {
+    padding-right: 0px;
+    padding-left: 0px;
+    
+}
+
+.main-kunye {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.main-kunye>* {
+    flex: 1 100%;
+}
+
+.kunye-table {
+    text-align: left;
+    margin-right: 35px;
+    background: white;
+    padding: 15px;
+}
+
+.kunye-sag {
+    background: rgba(255, 105, 180, 0);
+}
+
+.dergi-kunye {
+    padding: 15px;
+    box-shadow: 0px 1px 3px #203647;
+    margin-bottom: 35px;
+    background: rgba(255, 255, 255, 0.781);
+}
+
+.main-hab {
+    padding: 15px;
+    box-shadow: 0px 1px 3px #203647;
+    width: 100%;
+}
+
+.kunye-table table {
+    margin-bottom: 0px;
+}
+
+.kunye-table table tr th {
+    width: 40%;
+}
+
+.main-hab .panel ul li table tr td {
+    background-color: rgba(255, 255, 255, 0.877);
+    border-bottom: 2px solid rgb(155, 19, 19);
+    padding-right: 3px;
+}
+
+.hab {
+    border-left: 10px solid rgb(155, 19, 19);
+    color: rgb(155, 19, 19);
+    border-bottom: 2px solid rgb(155, 19, 19);
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+.main-bulten-kunye form {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.main-bulten-kunye .abone-kunye {
+    color: white;
+    background-color: #203647;
+    font-weight: bold;
+    padding: 8px 12px;
+    border: none;
+    font-size: 17px;
+    box-shadow: 0px 1px 3px #203647;
+    margin-top: 10px;
+}
+
+.abone-kunye:hover {
+    background-color: white;
+    color: #203647;
+}
+
+.main-bulten-kunye {
+    padding: 7px;
+    margin-bottom:35px;
+    box-shadow: 0px 1px 3px #203647;
+}
+
+.main-bulten-kunye h3 {
+    margin-bottom: 15px;
+}
+
+.main-bulten-kunye form .group {
+    margin-bottom: 20px;
+}
+
+@media all and (min-width: 600px) {
+    .aside {
+        flex: 1 0 0;
+    }
+}
+
+@media all and (min-width: 768px) {
+    .kunye-table {
+        flex: 3 0px;
+    }
+    .kunye-table {
+        order: 1
+    }
+    .kunye-sag {
+        order: 2
+    }
+}
+
+@media screen and (min-width:280px) {
+    .kunye-table {
+        padding: 5px;
+        font-size: 13px;
+        margin-right: 0px;
+        margin-bottom: 35px;
+    }
+    .dergi-kunye img {
+        width: 100%;
+    }
+    .main-dergi-kunye {
+        padding: 0px 50px;
+    }
+    .dergi-kunye {
+        padding: 5px;
+    }
+    .main-bulten-kunye {
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width:410px) {
+    .main-dergi-kunye {
+        padding: 0px 70px;
+    }
+    .main-bulten-kunye {
+        padding: 35px 35px 0px 35px;
+    }
+}
+
+@media screen and (min-width:500px) {
+    .main-dergi-kunye {
+        padding: 0px 150px;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .main-dergi-kunye {
+        padding: 0px;
+    }
+    .kunye-table {
+        margin-right: 35px;
+        padding: 10px;
+    }
+    .dergi-kunye,
+    .main-hab {
+        padding: 5px;
+    }
+    .hab {
+        font-size: 12px;
+    }
+    .main-bulten-kunye h3 {
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+    .main-bulten-kunye .group input {
+        font-size: 14px;
+        padding: 3px;
+    }
+    .main-bulten-kunye .abone-kunye {
+        padding: 4px 7px;
+        font-size: 14px;
+        margin-top: 5px;
+        font-weight: unset;
+    }
+    .main-bulten-kunye {
+        padding: 5px
+    }
+}
+
+@media screen and (min-width:992px) {
+    .dergi-kunye,
+    .main-hab,
+    .kunye-table {
+        padding: 7px;
+    }
+    .hab {
+        font-size: 13px;
+    }
+    .main-bulten-kunye h3 {
+        margin-bottom: 15px;
+        font-size: 23px;
+    }
+    .main-bulten-kunye .abone-kunye {
+        padding: 4px 7px;
+        font-size: 16px;
+        margin-top: 5px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .hab {
+        font-size: 15px;
+    }
+    .dergi-kunye,
+    .main-hab,
+    .kunye-table {
+        padding: 7px;
+    }
+    .main-bulten-kunye {
+        padding: 15px 15px 0px 15px;
+        box-shadow: 0px 1px 3px #203647;
+    }
+    .main-bulten-kunye h3 {
+        margin-bottom: 15px;
+        font-size: 21px;
+    }
+    .main-bulten-kunye form .group {
+        margin-bottom: 20px;
+    }
+    .main-bulten-kunye .group input {
+        font-size: 18px;
+    }
+    .main-bulten-kunye .abone-kunye {
+        padding: 8px 12px;
+        border: none;
+        font-size: 17px;
+    }
+}

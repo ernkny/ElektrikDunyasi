@@ -1,0 +1,40 @@
+﻿@model ElektrikDunyasi.Models.Entity.Dergi
+@{
+    ViewBag.Title = "PdfEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form style="margin-top:15px" class="form-group container "
+      method="post" enctype="multipart/form-data">
+    <div class="form-group row ">
+        <label class="ekle">Dergi Başlık</label>
+        <input type="text" class="form-control" name="DergiBaslik" />
+
+    </div>
+
+    <div class="form-group row ">
+        <label class="ekle">Pdf Tarih</label>
+        <input type="datetime-local" class="form-control" name="tarih" />
+
+    </div>
+    <div class="form-group row ">
+        <label class="ekle">Pdf Dosya</label>
+        <input style="margin-left:20px" type="file" name="file" />
+
+    </div>
+    <hr style="border:1px solid gray" />
+    <div class="form-group row ">
+        <label class="ekle">Kapak Resmi</label>
+        <input style="margin-left:20px" type="file" name="fileImage" />
+
+    </div>
+    <hr style="border:1px solid gray" />
+    <div style="margin-top:15px;">
+        <button class="btn btn-info" id="Pdfeklebtn">Pdf Ekle</button>
+    </div>
+</form>
+
+
+
+
+

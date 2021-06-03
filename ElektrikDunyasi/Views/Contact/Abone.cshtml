@@ -1,0 +1,48 @@
+﻿@using ElektrikDunyasi.Models.Entity;
+@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<AboneInfo>
+@{
+    ViewBag.Title = "Abone";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container ">
+    <h1 style="padding:10px; font-family:bold; font-weight:700; text-align:center">Abone İstekleri</h1>
+
+    <table class="table table-bordered bg-light">
+        <tr>
+            <th style="font-size:20px; font-weight:bold;"></th>
+            <th>İsim-Soyisim</th>
+            <th>E-Mail</th>
+
+            <th>Tarih</th>
+            <th>Sil</th>
+
+
+
+        </tr>
+
+        
+        @foreach (var abo in Model)
+        {
+            <tr>
+
+                <td style="font-weight:bold;">*</td>
+                <td style="width:35%;">@abo.AboneName</td>
+                <td style="width:25%;">@abo.Email </td>
+                
+                <td style="width:15%">@abo.Tarih</td>
+                <td>@Html.ActionLink("Sil", "AboneSil", new { id = abo.AboneId }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz?')" })</td>
+
+
+            </tr>
+
+          
+        }
+
+
+    </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Abone", new { page }))
+</div>
+

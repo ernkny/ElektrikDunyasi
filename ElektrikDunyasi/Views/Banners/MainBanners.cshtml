@@ -1,0 +1,50 @@
+﻿@using ElektrikDunyasi.Models.Entity;
+@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList <MainBanner>
+@{
+    ViewBag.Title = "MainBanners";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container ">
+
+    <h1 style="font-family:bold;font-weight:700; text-align:center">Orta Banner (800x400)</h1>
+    <a style="margin-bottom:15px" href="/Banners/MainBannerEkle/" class="btn btn-primary">Orta Banner Ekle</a>
+
+    <table class="table table-bordered bg-light">
+        <tr>
+            <th style="font-size:20px; font-weight:bold;">*</th>
+            <th>Banner Başlık</th>
+            <th>Banner Link</th>
+            <th>Banner Resmi</th>
+            <th>Tarih</th>
+            <th>Sil</th>
+
+
+
+        </tr>
+        @{int i = 1; }
+        @foreach (var Main in Model)
+        {
+            <tr>
+                <td style="font-weight:bold;">@i</td>
+                <td style="width:30%">@Main.MainBannerBaslik</td>
+                <td style="width:30%"><a target="_blank" href="@Main.LinkUrl">Orta Banner Adres</a></td>
+                <td style="width:30%"><img style="width:60px;height:60px" src="@Main.ImageUrl" alt="" /></td>
+                <td style="width:20%">@Main.Tarih</td>
+                <td>@Html.ActionLink("Sil", "MainBannerSil", new { id = Main.MainBannerId }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz?')" })</td>
+
+
+            </tr>
+            i++;
+        }
+
+
+    </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("MainBanners", new { page }))
+
+
+
+</div>
+

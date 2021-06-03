@@ -1,0 +1,44 @@
+﻿@model ElektrikDunyasi.Models.Entity.EDergi
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("EDergiGuncelle", "EDergi", FormMethod.Post))
+{
+
+    <div class="form-group container ">
+        <h2 style="font-family:bold;font-weight:700; text-align:center">E-Dergi Güncelle</h2>
+        <label>Dergi URL</label>
+        @Html.TextBoxFor(ed => ed.EDegiUrl, new { @class = "form-control" })
+        <br />
+        <label>Kapak URL</label>
+        @Html.TextBoxFor(ed => ed.EDergiResimUrl, new { @class = "form-control" })
+        <br />
+
+
+    </div>
+    <div class="container">
+        <button onclick = "return confirm('Güncellemek İstiyor musunuz?')" class=" btn btn-warning">Güncelle</button>
+    </div>
+}
+@using (Html.BeginForm())
+{
+<div class="form-group container">
+    <h2>E-Dergi</h2>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="@Model.EDergiResimUrl" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">E-Dergi</h5>
+            
+            <a href="@Model.EDegiUrl" target="_blank" btn btn-primary">Dergi Aç</a>
+        </div>
+    </div>
+    
+
+
+</div>
+
+
+}

@@ -1,0 +1,171 @@
+﻿@model ElektrikDunyasi.Models.ViewModel
+@{
+    ViewBag.Title = "Kunye";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/Content/Nav/css/kunye.css">
+</head>
+<!-- 1.BÖLÜM -->
+<div class="container kunye-parent">
+    <div class="main-kunye">
+        <!-- Künye-Tablo -->
+        <article class="kunye-table">
+            <table class="table table-striped ">
+                @foreach (var item in Model.elekts)
+                {
+
+
+                <tbody>
+                    <tr>
+                        <th class="head" scope="row">İmtiyaz Sahibi ve Genel Yayın Yönetmeni:</th>
+                        <td>@item.Imtyaz</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Sorumlu Yazı İşleri Müdürü:</th>
+                        <td>@item.Sormlu</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Yayın Danışmanları:</th>
+                        <td>
+                            @item.YayinDanisman
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Yayın Kurulu:</th>
+                        <td>
+                            @item.YayinKrl
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Reklma Koordinatörü:</th>
+                        <td>@item.Reklam</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Reklam Ve Halkla İlişkiler Sorumlusu:</th>
+                        <td>@item.ReklamHalk</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Güneydoğu Anadolu Bölge Müdürü:</th>
+                        <td>
+                            @item.Guney
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Kurye Dağıtım:</th>
+                        <td>
+                            @item.Kurye
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Çeviri:</th>
+                        <td>@item.Ceviri</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Doğu Karadeniz Bölge Temsilcisi:</th>
+                        <td>@item.Dogu</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">İran Temsilcisi:</th>
+                        <td>@item.Iran</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Mısır Temsilcisi:</th>
+                        <td>@item.Misir</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Hollanda Temsilcisi:</th>
+                        <td>@item.Holland</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Polanya Temsilcisi:</th>
+                        <td>@item.Poland</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Hukuk Danışmanlığı:</th>
+                        <td>@item.Hukuk</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Dağıtım:</th>
+                        <td>@item.Dagitim</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Baskı & Film Çıkışı:</th>
+                        <td>@item.Baski</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Yayına Hazırlayan Kuruluş:</th>
+                        <td>@item.Yayin</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Yayın Türü:</th>
+                        <td>@item.Type</td>
+
+                    </tr>
+                    <tr>
+                        <th class="head" scope="row">Yıl:</th>
+                        <td>@item.Year</td>
+
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td style="font-style: italic;">Ayda bir kez yayınlanır.Dergimizde yazılan yazıların sorumluluğu yazarlarına aittir. Dergimizde yayınlanan yazılar kaynak gösterilerek dahi olsa izinsiz kullanılamaz.</td>
+                    </tr>
+                </tbody>
+                }
+            </table>
+        </article>
+        <!-- Sağ Bölün -->
+        <aside class="aside kunye-sag">
+            <div class="container">
+                <!-- Künye-Dergi -->
+                <div class="row main-dergi-kunye">
+                    <div class="dergi-kunye">
+                        @foreach (var item in Model.eDergi)
+                        {
+                            <a target="_blank" href="/Home/Dergi"><img class="img-fluid" src="@item.EDergiResimUrl" alt=""></a>
+                            <a target="_blank" href="/Home/Dergi"><button class="oku w-100">Şimdi Oku</button></a>
+                        }
+                    </div>
+                </div>
+                <div class="row main-bulten-kunye">
+                    <h3 class="h3 font-weight-bold text-center">E-Bülten Aboneliği</h3>
+                    <form action="AboneEkle" method="post" enctype="multipart/form-data">
+                        <div class="group">
+
+                            <input class="w-100" type="text" placeholder="Ad ve Soyad" name="AboneName" required>
+                            <span class="bar w-100"></span>
+                        </div>
+                        <div class="group">
+
+                            <input class="w-100" type="email" name="Email" placeholder="E-mail" required>
+                            <span class="bar w-100"></span>
+                        </div>
+
+                        <button class="abone-kunye float-right">Abone Ol</button>
+                    </form>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+

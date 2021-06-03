@@ -1,0 +1,585 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.haberler {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.haberler>* {
+    flex: 1 100%;
+}
+
+.haber-sag {
+    text-align: left;
+    background: rgba(0, 191, 255, 0);
+}
+
+.haber-sol {
+    background: rgba(255, 217, 0, 0);
+    margin-right: 50px;
+}
+
+.main-haber {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+@media all and (min-width: 600px) {
+    .aside {
+        flex: 1 0 0;
+    }
+}
+
+@media all and (min-width: 992px) {
+    .haber-sol {
+        flex: 3 0px;
+    }
+    .aside-1 {
+        order: 1;
+    }
+    .haber-sol {
+        order: 2;
+    }
+    .haber-sag {
+        order: 3;
+    }
+}
+
+.haber-alt {
+    display: flex;
+    flex-flow: row wrap;
+    box-shadow: 0px 1px 3px #203647;
+    background-color: white;
+    margin-bottom: 15px;
+}
+
+.haber-alt>* {
+    flex: 1 100%;
+}
+
+.haber-icerik {
+    text-align: left;
+    background: rgba(0, 191, 255, 0);
+    padding: 15px;
+    position: relative;
+}
+
+.haber-foto {
+    box-shadow: 0px 1px 3px #203647;
+}
+
+
+/* .haber-foto img {
+    width: 219.58px;
+    height: 174.44px;
+} */
+
+.haber-basliks {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.haber-basliks:hover {
+    color: rgb(216, 7, 7);
+}
+
+.haber-alt-icerik {
+    font-size: 16px;
+    margin-bottom: 0px;
+    /* text-indent: 25px; */
+    text-align: justify;
+}
+
+.devam-oku {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: #203647;
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    box-shadow: 0px 1px 3px black;
+}
+
+.devam-oku:hover {
+    background-color: white;
+    color: #203647;
+}
+
+.haber-dergi {
+    padding: 5px;
+    box-shadow: 0px 1px 3px #203647;
+    background: rgba(255, 255, 255, 0.781);
+}
+
+.main-hab .panel ul li table tr td {
+    background-color: rgba(255, 255, 255, 0.877);
+    border-bottom: 2px solid rgb(155, 19, 19);
+    padding-right: 3px;
+}
+
+.main-hab ul li table tr td img {
+    width: 50px;
+    height: 60px;
+}
+
+.hab {
+    border-left: 10px solid rgb(155, 19, 19);
+    color: rgb(155, 19, 19);
+    border-bottom: 2px solid rgb(155, 19, 19);
+    padding-left: 2px;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+
+/* .haber-en-cok {
+    padding: 5px;
+    box-shadow: 0px 1px 3px #203647;
+    margin-bottom: 35px;
+} */
+
+.main-page-number {
+    margin: 30px 0px;
+}
+
+.page-number {
+    /* padding: 20px 25px; */
+    background-color: #203647;
+    color: white;
+    /* margin-right: 20px; */
+    font-weight: bold;
+    box-shadow: 0px 1px 3px #203647;
+}
+
+.page-number:hover {
+    color: #203647;
+    background-color: white;
+    text-decoration: none;
+}
+.haber-dergi img{
+    width:297px;
+}
+
+@media all and (min-width: 576px) {
+    .aside {
+        flex: 1 0 0;
+    }
+}
+
+@media all and (min-width: 576px) {
+    .haber-icerik {
+        flex: 3 0px;
+    }
+    .haber-foto {
+        order: 1;
+    }
+    .haber-icerik {
+        order: 2;
+    }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Bad+Script|Bellefair|Comfortaa|Satisfy|Slabo+27px|Vidaloka");
+@media screen and (min-width:280px) {
+    .haber-basliks {
+        font-size: 15px;
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+    .haber-alt-icerik {
+        font-size: 10px;
+        display: none;
+    }
+    .haber-sol {
+        margin-right: 0px;
+    }
+    .haber-icerik {
+        padding: 15px 10px 10px 10px;
+    }
+    .main-haber {
+        padding: 15px;
+    }
+    .devam-oku {
+        padding: 5px 8px;
+        font-size: 14px;
+    }
+    .haber-foto {
+        width: 290px;
+        height: 180px;
+        overflow: hidden;
+    }
+    .haber-foto img {
+        transition: all 0.3s ease-out;
+        position: relative;
+        height: 180px;
+        width: 100%;
+    }
+    .haber-foto:hover img {
+        transform: scale(1.2, 1.2);
+        z-index: 9;
+        cursor: pointer;
+    }
+    .main-haber-dergi {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .haber-floating-baslik {
+        font-weight: bold;
+    }
+    .haber-sag {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .haber-en-cok .vertical-icerik {
+        display: block;
+    }
+    .haber-en-cok .panel .row ul li {
+        width: 100%;
+    }
+    .haber-floating-baslik {
+        font-weight: bold;
+    }
+    .haber-en-cok {
+        margin-bottom: 30px;
+    }
+    .page-number {
+        padding: 10px 15px;
+        margin-right: 8px;
+        font-size: 20px;
+    }
+    .haber-en-cok {
+        padding: 5px;
+        box-shadow: 0px 1px 3px #203647;
+    }
+}
+
+@media screen and (min-width:340px) {
+    .main-haber-dergi {
+        padding: 0px 30px;
+    }
+    .main-haber-dergi img {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:360px) {
+    .main-haber {
+        padding: 20px;
+    }
+    .main-haber-dergi {
+        padding: 0px 30px;
+    }
+    .main-haber-dergi img {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:400px) {
+    .haber-basliks {
+        font-size: 18px;
+    }
+    .haber-foto {
+        width: 290px;
+        height: 210px;
+        overflow: hidden;
+    }
+    .haber-foto img {
+        height: 210px;
+    }
+    .main-haber-dergi {
+        padding: 0px 50px;
+    }
+    .main-haber-dergi img {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:500px) {
+    .devam-oku {
+        font-size: 18px;
+    }
+    .haber-basliks {
+        font-size: 20px;
+    }
+    .haber-foto {
+        width: 290px;
+        height: 250px;
+        overflow: hidden;
+    }
+    .haber-foto img {
+        height: 250px;
+    }
+    .haber-sag {
+        padding: 0px 30px;
+    }
+    .main-haber-dergi {
+        padding: 0px 80px;
+    }
+    .haber-floating-baslik {
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width:576px) {
+    .haberler {
+        padding: 0px;
+    }
+    .haber-basliks {
+        font-size: 18px;
+    }
+    .haber-icerik {
+        padding: 17px 15px 0px 15px;
+    }
+    .haber-foto {
+        width: 127.5px;
+        height: 128px;
+        overflow: hidden;
+    }
+    .haber-foto img {
+        transition: all 0.3s ease-out;
+        position: relative;
+        height: 128px;
+        width: 100%;
+    }
+    .haber-foto:hover img {
+        transform: scale(1.2, 1.2);
+        z-index: 9;
+        cursor: pointer;
+    }
+    .devam-oku {
+        margin-top: 5px;
+        padding: 2px 8px;
+        font-size: 14px;
+    }
+    .haber-en-cok .vertical-icerik {
+        display: block;
+    }
+    .haber-en-cok .panel .row ul li {
+        width: 100%;
+    }
+    .haber-floating-baslik {
+        font-weight: bold;
+    }
+    .haber-sag {
+        padding: 0px 20px;
+    }
+    .main-haber-dergi {
+        padding: 0px 80px;
+    }
+    .haber-dergi img {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .haber-basliks {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+    .devam-oku {
+        padding: 2px 6px;
+        font-size: 15px;
+    }
+    .haber-icerik {
+        padding: 15px;
+    }
+    .haberler {
+        padding: 0px;
+    }
+    .haber-alt-icerik {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+    .haber-foto {
+        width: 172.5px;
+        height: 161.6px;
+        overflow: hidden;
+    }
+    .haber-foto img {
+        transition: all 0.3s ease-out;
+        position: relative;
+        height: 161.6px;
+        width: 100%;
+    }
+    .haber-foto:hover img {
+        transform: scale(1.2, 1.2);
+        z-index: 9;
+        cursor: pointer;
+    }
+    .main-haber {
+        padding: 0px;
+    }
+    .haber-en-cok .vertical-icerik {
+        display: block;
+    }
+    .haber-en-cok .panel .row ul li {
+        width: 100%;
+    }
+    .haber-floating-baslik {
+        font-weight: bold;
+    }
+    .haber-sag {
+        display: flex;
+    }
+    .haber-dergi {
+        margin-left: 25px;
+    }
+    .haber-dergi img {
+        width: 305px;
+        height: 370px;
+    }
+    .main-haber-dergi {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .haber-en-cok {
+        padding: 5px;
+        box-shadow: 0px 1px 3px #203647;
+    }
+    .haber-sag {
+        padding: 0px;
+    }
+    .haber-en-cok {
+        margin-bottom: 0px;
+    }
+    .page-number {
+        padding: 15px 20px;
+        margin-right: 10px;
+    }
+    .haber-dergi button:hover{
+        font-weight:unset;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .haber-basliks {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .haber-alt-icerik {
+        font-size: 14px;
+        margin-bottom: 0px;
+    }
+    .haber-sol {
+        margin-right: 35px;
+    }
+    .haber-foto {
+        width: 182.09px;
+        height: 167px;
+        overflow: hidden;
+    }
+    .haber-foto img {
+        transition: all 0.3s ease-out;
+        position: relative;
+        height: 167px;
+        width: 100%;
+    }
+    .haber-foto:hover img {
+        transform: scale(1.2, 1.2);
+        z-index: 9;
+        cursor: pointer;
+    }
+    .main-haber {
+        padding: 0px;
+    }
+    .haber-alt-icerik {
+        font-size: 16px;
+        line-height: 100%;
+    }
+    .haber-en-cok .floating-baslik {
+        font-weight: bold;
+    }
+    .haber-floating-baslik {
+        font-weight: bold;
+    }
+    .hab {
+        font-size: 14px;
+        font-weight: 750;
+    }
+    .haber-sag {
+        display: flex;
+        flex-direction: column;
+    }
+    .haber-dergi {
+        margin-left: 0px;
+    }
+    .haber-dergi img {
+        height: 100%;
+    }
+    .haber-en-cok {
+        margin-bottom: 35px;
+    }
+    .vertical-icerik {
+        font-size: 10px;
+    }
+    .page-number {
+        padding: 12px 16px;
+        margin-right: 15px;
+    }
+    .panel-heading {
+        margin-top: 8px;
+        margin-bottom: 10px;
+    }
+    .haber-dergi button:hover {
+        font-weight: bold;
+    }
+
+}
+
+@media screen and (min-width:1200px) {
+    .haber-basliks {
+        font-size: 20px;
+    }
+    .haber-alt-icerik {
+        font-size: 16px;
+        line-height: 160%;
+    }
+    .devam-oku {
+        font-size: 16px;
+        padding: 3px 10px;
+    }
+    .haber-foto img {
+        width: 100%;
+        height: 100%;
+    }
+    .haber-foto {
+        width: 219.59px;
+        height: 186.6px;
+        overflow: hidden;
+    }
+    .haber-foto img {
+        transition: all 0.3s ease-out;
+        position: relative;
+        height: 186.6px;
+    }
+    .haber-foto:hover img {
+        transform: scale(1.2, 1.2);
+        z-index: 9;
+        cursor: pointer;
+    }
+    .haber-icerik {
+        padding: 10px 15px;
+    }
+    .main-haber {
+        padding: 0px;
+    }
+    .page-number {
+        padding: 15px 20px;
+        margin-right: 15px;
+    }
+    .vertical-icerik {
+        font-size: 11px;
+    }
+    .panel-heading {
+        margin-top: 12px;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,769 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DergiElektrikModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AboneInfo">
+          <Key>
+            <PropertyRef Name="AboneId" />
+          </Key>
+          <Property Name="AboneId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AboneName" Type="varchar(max)" />
+          <Property Name="Email" Type="varchar(max)" />
+          <Property Name="Tarih" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="Akedemisyen">
+          <Key>
+            <PropertyRef Name="AkedemiId" />
+          </Key>
+          <Property Name="AkedemiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar(max)" />
+          <Property Name="Yazi" Type="varchar(max)" />
+          <Property Name="Ekleyen" Type="varchar(max)" />
+          <Property Name="Tarih" Type="datetime2" Precision="7" />
+          <Property Name="Keywords" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Name="ContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Address" Type="varchar(max)" />
+          <Property Name="Telefon" Type="varchar(max)" />
+          <Property Name="Faks" Type="varchar(max)" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Dergi">
+          <Key>
+            <PropertyRef Name="DergiId" />
+          </Key>
+          <Property Name="DergiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DergiBaslik" Type="nvarchar(max)" />
+          <Property Name="Tarih" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="DergiUrl" Type="nvarchar(max)" />
+          <Property Name="DergiDeleteUrl" Type="nvarchar(max)" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+          <Property Name="DeleteImageUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EDergi">
+          <Key>
+            <PropertyRef Name="EDergiId" />
+          </Key>
+          <Property Name="EDergiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EDegiUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="EDergiResimUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Editor">
+          <Key>
+            <PropertyRef Name="EditorId" />
+          </Key>
+          <Property Name="EditorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="nvarchar(max)" />
+          <Property Name="Icerik" Type="nvarchar(max)" />
+          <Property Name="Tarih" Type="datetime2" Precision="7" />
+          <Property Name="Keywords" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ElektKunye">
+          <Key>
+            <PropertyRef Name="KunyeId" />
+          </Key>
+          <Property Name="KunyeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imtyaz" Type="varchar(max)" />
+          <Property Name="Sormlu" Type="varchar(max)" />
+          <Property Name="YayinDanisman" Type="varchar(max)" />
+          <Property Name="YayinKrl" Type="varchar(max)" />
+          <Property Name="Reklam" Type="varchar(max)" />
+          <Property Name="ReklamHalk" Type="varchar(max)" />
+          <Property Name="Guney" Type="varchar(max)" />
+          <Property Name="Kurye" Type="varchar(max)" />
+          <Property Name="Ceviri" Type="varchar(max)" />
+          <Property Name="Dogu" Type="varchar(max)" />
+          <Property Name="Iran" Type="varchar(max)" />
+          <Property Name="Misir" Type="varchar(max)" />
+          <Property Name="Holland" Type="varchar(max)" />
+          <Property Name="Poland" Type="varchar(max)" />
+          <Property Name="Hukuk" Type="varchar(max)" />
+          <Property Name="Dagitim" Type="varchar(max)" />
+          <Property Name="Baski" Type="varchar(max)" />
+          <Property Name="Yayin" Type="varchar(max)" />
+          <Property Name="Type" Type="varchar(max)" />
+          <Property Name="Year" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Haberler">
+          <Key>
+            <PropertyRef Name="HaberId" />
+          </Key>
+          <Property Name="HaberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageId" Type="int" />
+          <Property Name="HaberBaslik" Type="nvarchar" MaxLength="255" />
+          <Property Name="HaberYazi" Type="nvarchar(max)" />
+          <Property Name="HaberEkleyen" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+          <Property Name="Tarih" Type="datetime2" Precision="7" />
+          <Property Name="DeleteUrl" Type="nvarchar(max)" />
+          <Property Name="Keywords" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Hakkimizda">
+          <Key>
+            <PropertyRef Name="HakkimizdaId" />
+          </Key>
+          <Property Name="HakkimizdaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HakkimizdaIcerik" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="LeftBanner">
+          <Key>
+            <PropertyRef Name="LeftBannerId" />
+          </Key>
+          <Property Name="LeftBannerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageUrl" Type="varchar(max)" />
+          <Property Name="DeleteUrl" Type="varchar(max)" />
+          <Property Name="LinkUrl" Type="varchar(max)" />
+          <Property Name="Tarih" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="LoginAdmin">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar(max)" />
+          <Property Name="UserPassword" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="MainBanner">
+          <Key>
+            <PropertyRef Name="MainBannerId" />
+          </Key>
+          <Property Name="MainBannerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageUrl" Type="varchar(max)" />
+          <Property Name="LinkUrl" Type="varchar(max)" />
+          <Property Name="Tarih" Type="datetime2" Precision="7" />
+          <Property Name="MainBannerBaslik" Type="varchar(max)" />
+          <Property Name="DeleteUrl" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Makaleler">
+          <Key>
+            <PropertyRef Name="MakaleId" />
+          </Key>
+          <Property Name="MakaleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MakaleBaslik" Type="nvarchar(max)" />
+          <Property Name="Ekleyen" Type="nvarchar" MaxLength="20" />
+          <Property Name="Tarih" Type="datetime2" Precision="7" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+          <Property Name="DeleteUrl" Type="nvarchar(max)" />
+          <Property Name="MakaleYazi" Type="nvarchar(max)" />
+          <Property Name="Keywords" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="RightBanner">
+          <Key>
+            <PropertyRef Name="RightBannerId" />
+          </Key>
+          <Property Name="RightBannerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageUrl" Type="varchar(max)" />
+          <Property Name="DeleteUrl" Type="varchar(max)" />
+          <Property Name="LinkUrl" Type="varchar(max)" />
+          <Property Name="Tarih" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="Rportaj">
+          <Key>
+            <PropertyRef Name="RportajId" />
+          </Key>
+          <Property Name="RportajId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RportajBaslik" Type="nvarchar(max)" />
+          <Property Name="RportajYazi" Type="nvarchar(max)" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+          <Property Name="DeleteUrl" Type="nvarchar(max)" />
+          <Property Name="Tarih" Type="datetime2" Precision="7" />
+          <Property Name="Keywords" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Sektorden">
+          <Key>
+            <PropertyRef Name="SektorId" />
+          </Key>
+          <Property Name="SektorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar(max)" />
+          <Property Name="Yazi" Type="varchar(max)" />
+          <Property Name="ImageUrl" Type="varchar(max)" />
+          <Property Name="Tarih" Type="datetime2" Precision="7" />
+          <Property Name="DeleteUrl" Type="varchar(max)" />
+          <Property Name="Keywords" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="SiteYonetim">
+          <Key>
+            <PropertyRef Name="SıteID" />
+          </Key>
+          <Property Name="SıteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteBaslik" Type="varchar(max)" />
+          <Property Name="SiteAciklama" Type="varchar(max)" />
+          <Property Name="SiteKeywords" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="stdImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="ImageUrl" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Teknoloji">
+          <Key>
+            <PropertyRef Name="TeknoId" />
+          </Key>
+          <Property Name="TeknoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeknoBaslik" Type="nvarchar(max)" />
+          <Property Name="TeknoYazi" Type="nvarchar(max)" />
+          <Property Name="Tarih" Type="datetime2" Precision="7" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+          <Property Name="DeleteUrl" Type="nvarchar(max)" />
+          <Property Name="Keywords" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="DergiElektrikModelStoreContainer">
+          <EntitySet Name="AboneInfo" EntityType="Self.AboneInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Akedemisyen" EntityType="Self.Akedemisyen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dergi" EntityType="Self.Dergi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EDergi" EntityType="Self.EDergi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Editor" EntityType="Self.Editor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElektKunye" EntityType="Self.ElektKunye" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Haberler" EntityType="Self.Haberler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LeftBanner" EntityType="Self.LeftBanner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginAdmin" EntityType="Self.LoginAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MainBanner" EntityType="Self.MainBanner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Makaleler" EntityType="Self.Makaleler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RightBanner" EntityType="Self.RightBanner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rportaj" EntityType="Self.Rportaj" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sektorden" EntityType="Self.Sektorden" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SiteYonetim" EntityType="Self.SiteYonetim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stdImages" EntityType="Self.stdImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teknoloji" EntityType="Self.Teknoloji" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DergiElektrikModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Haberler">
+          <Key>
+            <PropertyRef Name="HaberId" />
+          </Key>
+          <Property Name="HaberId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HaberBaslik" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="HaberYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HaberEkleyen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="DateTime" Precision="7" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Rportaj">
+          <Key>
+            <PropertyRef Name="RportajId" />
+          </Key>
+          <Property Name="RportajId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RportajBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RportajYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="DateTime" Precision="7" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="DergiElektrikEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Haberler" EntityType="Self.Haberler" />
+          <EntitySet Name="Rportaj" EntityType="Self.Rportaj" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Contact" EntityType="DergiElektrikModel.Contact" />
+          <EntitySet Name="Hakkimizda" EntityType="DergiElektrikModel.Hakkimizda" />
+          <EntitySet Name="SiteYonetim" EntityType="DergiElektrikModel.SiteYonetim" />
+          <EntitySet Name="Teknoloji" EntityType="DergiElektrikModel.Teknoloji" />
+          <EntitySet Name="Makaleler" EntityType="DergiElektrikModel.Makaleler" />
+          <EntitySet Name="Dergi" EntityType="DergiElektrikModel.Dergi" />
+          <EntitySet Name="EDergi" EntityType="DergiElektrikModel.EDergi" />
+          <EntitySet Name="LoginAdmin" EntityType="DergiElektrikModel.LoginAdmin" />
+          <EntitySet Name="ElektKunye" EntityType="DergiElektrikModel.ElektKunye" />
+          <EntitySet Name="LeftBanner" EntityType="DergiElektrikModel.LeftBanner" />
+          <EntitySet Name="MainBanner" EntityType="DergiElektrikModel.MainBanner" />
+          <EntitySet Name="RightBanner" EntityType="DergiElektrikModel.RightBanner" />
+          <EntitySet Name="AboneInfo" EntityType="DergiElektrikModel.AboneInfo" />
+          <EntitySet Name="Editor" EntityType="DergiElektrikModel.Editor" />
+          <EntitySet Name="Sektorden" EntityType="DergiElektrikModel.Sektorden" />
+          <EntitySet Name="stdImages" EntityType="DergiElektrikModel.stdImages" />
+          <EntitySet Name="Akedemisyen" EntityType="DergiElektrikModel.Akedemisyen" />
+          </EntityContainer>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Name="ContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Faks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Hakkimizda">
+          <Key>
+            <PropertyRef Name="HakkimizdaId" />
+          </Key>
+          <Property Name="HakkimizdaIcerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HakkimizdaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="SiteYonetim">
+          <Key>
+            <PropertyRef Name="SıteID" />
+          </Key>
+          <Property Name="SıteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SiteAciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SiteKeywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Teknoloji">
+          <Key>
+            <PropertyRef Name="TeknoId" />
+          </Key>
+          <Property Name="TeknoBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TeknoYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TeknoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tarih" Type="DateTime" Precision="7" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Makaleler">
+          <Key>
+            <PropertyRef Name="MakaleId" />
+          </Key>
+          <Property Name="MakaleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MakaleBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ekleyen" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="DateTime" Precision="7" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MakaleYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Dergi">
+          <Key>
+            <PropertyRef Name="DergiId" />
+          </Key>
+          <Property Name="DergiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DergiBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="DergiUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DergiDeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeleteImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EDergi">
+          <Key>
+            <PropertyRef Name="EDergiId" />
+          </Key>
+          <Property Name="EDergiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EDegiUrl" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EDergiResimUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LoginAdmin">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ElektKunye">
+          <Key>
+            <PropertyRef Name="KunyeId" />
+          </Key>
+          <Property Name="KunyeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imtyaz" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sormlu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="YayinDanisman" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="YayinKrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reklam" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ReklamHalk" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Guney" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Kurye" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ceviri" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Dogu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Iran" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Misir" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Holland" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Poland" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hukuk" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Dagitim" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Baski" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Yayin" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LeftBanner">
+          <Key>
+            <PropertyRef Name="LeftBannerId" />
+          </Key>
+          <Property Name="LeftBannerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LinkUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="7" />
+        </EntityType>
+        <EntityType Name="MainBanner">
+          <Key>
+            <PropertyRef Name="MainBannerId" />
+          </Key>
+          <Property Name="MainBannerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LinkUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="7" />
+          <Property Name="MainBannerBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RightBanner">
+          <Key>
+            <PropertyRef Name="RightBannerId" />
+          </Key>
+          <Property Name="RightBannerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LinkUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="7" />
+        </EntityType>
+        <EntityType Name="AboneInfo">
+          <Key>
+            <PropertyRef Name="AboneId" />
+          </Key>
+          <Property Name="AboneId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AboneName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="7" />
+        </EntityType>
+        <EntityType Name="Editor">
+          <Key>
+            <PropertyRef Name="EditorId" />
+          </Key>
+          <Property Name="EditorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="DateTime" Precision="7" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Sektorden">
+          <Key>
+            <PropertyRef Name="SektorId" />
+          </Key>
+          <Property Name="SektorId" Type="Int32" Nullable="false" />
+          <Property Name="Baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Yazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="7" />
+          <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="stdImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Akedemisyen">
+          <Key>
+            <PropertyRef Name="AkedemiId" />
+          </Key>
+          <Property Name="AkedemiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Yazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ekleyen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="7" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DergiElektrikModelStoreContainer" CdmEntityContainer="DergiElektrikEntities">
+          <EntitySetMapping Name="Haberler">
+            <EntityTypeMapping TypeName="DergiElektrikModel.Haberler">
+              <MappingFragment StoreEntitySet="Haberler">
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="HaberEkleyen" ColumnName="HaberEkleyen" />
+                <ScalarProperty Name="HaberId" ColumnName="HaberId" />
+                <ScalarProperty Name="HaberBaslik" ColumnName="HaberBaslik" />
+                <ScalarProperty Name="HaberYazi" ColumnName="HaberYazi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rportaj">
+            <EntityTypeMapping TypeName="DergiElektrikModel.Rportaj">
+              <MappingFragment StoreEntitySet="Rportaj">
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="RportajId" ColumnName="RportajId" />
+                <ScalarProperty Name="RportajBaslik" ColumnName="RportajBaslik" />
+                <ScalarProperty Name="RportajYazi" ColumnName="RportajYazi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DergiElektrikModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contact">
+            <EntityTypeMapping TypeName="DergiElektrikModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Faks" ColumnName="Faks" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hakkimizda">
+            <EntityTypeMapping TypeName="DergiElektrikModel.Hakkimizda">
+              <MappingFragment StoreEntitySet="Hakkimizda">
+                <ScalarProperty Name="HakkimizdaId" ColumnName="HakkimizdaId" />
+                <ScalarProperty Name="HakkimizdaIcerik" ColumnName="HakkimizdaIcerik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteYonetim">
+            <EntityTypeMapping TypeName="DergiElektrikModel.SiteYonetim">
+              <MappingFragment StoreEntitySet="SiteYonetim">
+                <ScalarProperty Name="SiteKeywords" ColumnName="SiteKeywords" />
+                <ScalarProperty Name="SiteAciklama" ColumnName="SiteAciklama" />
+                <ScalarProperty Name="SiteBaslik" ColumnName="SiteBaslik" />
+                <ScalarProperty Name="SıteID" ColumnName="SıteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teknoloji">
+            <EntityTypeMapping TypeName="DergiElektrikModel.Teknoloji">
+              <MappingFragment StoreEntitySet="Teknoloji">
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="TeknoId" ColumnName="TeknoId" />
+                <ScalarProperty Name="TeknoYazi" ColumnName="TeknoYazi" />
+                <ScalarProperty Name="TeknoBaslik" ColumnName="TeknoBaslik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Makaleler">
+            <EntityTypeMapping TypeName="DergiElektrikModel.Makaleler">
+              <MappingFragment StoreEntitySet="Makaleler">
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="MakaleYazi" ColumnName="MakaleYazi" />
+                <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Ekleyen" ColumnName="Ekleyen" />
+                <ScalarProperty Name="MakaleBaslik" ColumnName="MakaleBaslik" />
+                <ScalarProperty Name="MakaleId" ColumnName="MakaleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dergi">
+            <EntityTypeMapping TypeName="DergiElektrikModel.Dergi">
+              <MappingFragment StoreEntitySet="Dergi">
+                <ScalarProperty Name="DeleteImageUrl" ColumnName="DeleteImageUrl" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="DergiDeleteUrl" ColumnName="DergiDeleteUrl" />
+                <ScalarProperty Name="DergiUrl" ColumnName="DergiUrl" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="DergiBaslik" ColumnName="DergiBaslik" />
+                <ScalarProperty Name="DergiId" ColumnName="DergiId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EDergi">
+            <EntityTypeMapping TypeName="DergiElektrikModel.EDergi">
+              <MappingFragment StoreEntitySet="EDergi">
+                <ScalarProperty Name="EDergiResimUrl" ColumnName="EDergiResimUrl" />
+                <ScalarProperty Name="EDegiUrl" ColumnName="EDegiUrl" />
+                <ScalarProperty Name="EDergiId" ColumnName="EDergiId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginAdmin">
+            <EntityTypeMapping TypeName="DergiElektrikModel.LoginAdmin">
+              <MappingFragment StoreEntitySet="LoginAdmin">
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElektKunye">
+            <EntityTypeMapping TypeName="DergiElektrikModel.ElektKunye">
+              <MappingFragment StoreEntitySet="ElektKunye">
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Yayin" ColumnName="Yayin" />
+                <ScalarProperty Name="Baski" ColumnName="Baski" />
+                <ScalarProperty Name="Dagitim" ColumnName="Dagitim" />
+                <ScalarProperty Name="Hukuk" ColumnName="Hukuk" />
+                <ScalarProperty Name="Poland" ColumnName="Poland" />
+                <ScalarProperty Name="Holland" ColumnName="Holland" />
+                <ScalarProperty Name="Misir" ColumnName="Misir" />
+                <ScalarProperty Name="Iran" ColumnName="Iran" />
+                <ScalarProperty Name="Dogu" ColumnName="Dogu" />
+                <ScalarProperty Name="Ceviri" ColumnName="Ceviri" />
+                <ScalarProperty Name="Kurye" ColumnName="Kurye" />
+                <ScalarProperty Name="Guney" ColumnName="Guney" />
+                <ScalarProperty Name="ReklamHalk" ColumnName="ReklamHalk" />
+                <ScalarProperty Name="Reklam" ColumnName="Reklam" />
+                <ScalarProperty Name="YayinKrl" ColumnName="YayinKrl" />
+                <ScalarProperty Name="YayinDanisman" ColumnName="YayinDanisman" />
+                <ScalarProperty Name="Sormlu" ColumnName="Sormlu" />
+                <ScalarProperty Name="Imtyaz" ColumnName="Imtyaz" />
+                <ScalarProperty Name="KunyeId" ColumnName="KunyeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeftBanner">
+            <EntityTypeMapping TypeName="DergiElektrikModel.LeftBanner">
+              <MappingFragment StoreEntitySet="LeftBanner">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+                <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="LeftBannerId" ColumnName="LeftBannerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MainBanner">
+            <EntityTypeMapping TypeName="DergiElektrikModel.MainBanner">
+              <MappingFragment StoreEntitySet="MainBanner">
+                <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+                <ScalarProperty Name="MainBannerBaslik" ColumnName="MainBannerBaslik" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="MainBannerId" ColumnName="MainBannerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RightBanner">
+            <EntityTypeMapping TypeName="DergiElektrikModel.RightBanner">
+              <MappingFragment StoreEntitySet="RightBanner">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+                <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="RightBannerId" ColumnName="RightBannerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AboneInfo">
+            <EntityTypeMapping TypeName="DergiElektrikModel.AboneInfo">
+              <MappingFragment StoreEntitySet="AboneInfo">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AboneName" ColumnName="AboneName" />
+                <ScalarProperty Name="AboneId" ColumnName="AboneId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Editor">
+            <EntityTypeMapping TypeName="DergiElektrikModel.Editor">
+              <MappingFragment StoreEntitySet="Editor">
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="EditorId" ColumnName="EditorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sektorden">
+            <EntityTypeMapping TypeName="DergiElektrikModel.Sektorden">
+              <MappingFragment StoreEntitySet="Sektorden">
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Yazi" ColumnName="Yazi" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="SektorId" ColumnName="SektorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stdImages">
+            <EntityTypeMapping TypeName="DergiElektrikModel.stdImages">
+              <MappingFragment StoreEntitySet="stdImages">
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Akedemisyen">
+            <EntityTypeMapping TypeName="DergiElektrikModel.Akedemisyen">
+              <MappingFragment StoreEntitySet="Akedemisyen">
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Ekleyen" ColumnName="Ekleyen" />
+                <ScalarProperty Name="Yazi" ColumnName="Yazi" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="AkedemiId" ColumnName="AkedemiId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

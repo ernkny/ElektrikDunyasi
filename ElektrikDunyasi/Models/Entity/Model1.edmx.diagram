@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="840b2a5c787e4f8cb20b45c937a9855f" Name="Diagram1">
+        <EntityTypeShape EntityType="DergiElektrikModel.Haberler" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DergiElektrikModel.Rportaj" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DergiElektrikModel.sysdiagrams" Width="1.5" PointX="6.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DergiElektrikModel.Contact" Width="1.5" PointX="0.625" PointY="0.5" />
+        <EntityTypeShape EntityType="DergiElektrikModel.Hakkimizda" Width="1.5" PointX="2.25" PointY="0.625" />
+        <EntityTypeShape EntityType="DergiElektrikModel.SiteYonetim" Width="1.5" PointX="4.5" PointY="0.625" />
+        <EntityTypeShape EntityType="DergiElektrikModel.Teknoloji" Width="1.5" PointX="6.625" PointY="3.75" />
+        <EntityTypeShape EntityType="DergiElektrikModel.Makaleler" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DergiElektrikModel.Dergi" Width="1.5" PointX="8.125" PointY="0.625" />
+        <EntityTypeShape EntityType="DergiElektrikModel.EDergi" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="DergiElektrikModel.LoginAdmin" Width="1.5" PointX="2.625" PointY="7" />
+        <EntityTypeShape EntityType="DergiElektrikModel.ElektKunye" Width="1.5" PointX="8.625" PointY="3.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="DergiElektrikModel.LeftBanner" Width="1.5" PointX="4.75" PointY="7" />
+        <EntityTypeShape EntityType="DergiElektrikModel.MainBanner" Width="1.5" PointX="6.625" PointY="7.125" />
+        <EntityTypeShape EntityType="DergiElektrikModel.RightBanner" Width="1.5" PointX="0.5" PointY="9" />
+        <EntityTypeShape EntityType="DergiElektrikModel.AboneInfo" Width="1.5" PointX="2.5" PointY="9" />
+        <EntityTypeShape EntityType="DergiElektrikModel.Editor" Width="1.5" PointX="9.375" PointY="5.75" />
+        <EntityTypeShape EntityType="DergiElektrikModel.Sektorden" Width="1.5" PointX="9.375" PointY="8.75" />
+        <EntityTypeShape EntityType="DergiElektrikModel.stdImages" Width="1.5" PointX="10.375" PointY="0.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

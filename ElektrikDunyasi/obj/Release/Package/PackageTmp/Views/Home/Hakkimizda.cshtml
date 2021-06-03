@@ -1,0 +1,38 @@
+﻿@model ElektrikDunyasi.Models.ViewModel
+@{
+    ViewBag.Title = "Hakkimizda";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/Content/Nav/css/hakkimizda.css">
+</head>
+<div class="container hakkimizda">
+    <div class="hakkimizda-main">
+        <article class="hakkimizda-sol">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center hakkimizda-img">
+                    <img class="img-fluid" src="~/Content/Nav/images/33.jpg" alt="">
+                </div>@foreach (var item in Model.hakkimiz)
+                {
+                    <div class="col-12 hakkimizda-paragraf">
+                       
+                       @Html.Raw( item.HakkimizdaIcerik)
+
+                    </div>
+                }
+
+            </div>
+        </article>
+
+        <aside class="aside hakkimizda-sag">
+            <div class="dergi">
+                @foreach (var item in Model.eDergi)
+                {
+                    <a target="_blank" href="/Home/Dergi"><img class="img-fluid" src="@item.EDergiResimUrl" alt=""></a>
+                    <a target="_blank" href="/Home/Dergi"><button class="oku w-100">Şimdi Oku</button></a>
+                }
+            </div>
+        </aside>
+    </div>
+</div>
+

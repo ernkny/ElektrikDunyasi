@@ -1,0 +1,620 @@
+        /* ********************BODY***********************************/
+        
+        html {
+            min-height: 100%;
+        }
+        
+        body {
+            background: hsla(0, 0%, 87%, 1);
+            background: radial-gradient(circle, hsla(0, 0%, 87%, 1) 0%, hsla(202, 45%, 74%, 1) 100%);
+            background: -moz-radial-gradient(circle, hsla(0, 0%, 87%, 1) 0%, hsla(202, 45%, 74%, 1) 100%);
+            background: -webkit-radial-gradient(circle, hsla(0, 0%, 87%, 1) 0%, hsla(202, 45%, 74%, 1) 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#DFDFDF", endColorstr="#9EC4DA", GradientType=1);
+            /* font-family: Arial, sans-serif; */
+        }
+        
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+        /****************************NAVBAR****************************/
+        
+        @media screen and (max-width:768px) {
+            #logo2 {
+                display: none;
+            }
+        }
+        
+        @media all and (max-width:1200px) {
+            #logo {
+                display: none;
+            }
+            #logo2 {
+                display: block;
+                height: 24px;
+            }
+        }
+        
+        @media screen and (min-width:1200px) {
+            #logo2 {
+                display: none;
+            }
+        }
+        
+        @media screen and (width:1200px) {
+            #logo2 {
+                display: block;
+            }
+        }
+        
+        @media screen and (min-width:992px) and (max-width:1200px) {
+            .twitter {
+                display: none;
+            }
+        }
+        
+        .navbar-brand {
+            margin-right: 0px;
+        }
+        
+        nav .container {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        
+        .nav-link,
+        .dropdown-item {
+            color: #203647;
+            font-weight: bold;
+        }
+        
+        .nav-link:hover,
+        .dropdown-item:hover {
+            color: red;
+            background-color: rgba(255, 255, 255, 0);
+        }
+        
+        nav {
+            margin: 50px 0px;
+            background-color: white;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+        }
+        /*========================================================================================*/
+        /**********************************MAIN CONTENT*****************************************/
+        
+        .content {
+            display: flex;
+            flex-flow: row wrap;
+            padding: 0px;
+        }
+        
+        .content>* {
+            flex: 1 100%;
+        }
+        
+        .main {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.747);
+            box-shadow: 0px 1px 3px #203647;
+            margin-right: 53px;
+        }
+        
+        .aside-1 {
+            background: rgba(255, 217, 0, 0);
+        }
+        
+        .aside-2 {
+            background: rgba(255, 105, 180, 0);
+            box-shadow: 0px 1px 3px #203647
+        }
+        /*****************SAĞ BÖLÜM************************/
+        
+        .aside-2 {
+            padding: 15px;
+        }
+        
+        .e-dergi-button {
+            width: 100%;
+            background-color: #203647;
+            color: white;
+            padding: 6px 0px;
+            margin-top: 15px;
+        }
+        
+        .e-dergi-button:hover {
+            background-color: white;
+            color: #203647;
+            box-shadow: 0px 1px 3px black;
+            /* border: 1px solid #203647 */
+        }
+        /****************SOL BÖLÜM**********************/
+        
+        .group {
+            position: relative;
+            margin-top: 25px;
+        }
+        
+        input {
+            display: block;
+            border: none;
+            border-bottom: 2px solid white;
+            background-color: #20364700;
+            padding-left: 5px;
+            padding-bottom: 5px;
+            /* height: 30px; */
+        }
+        
+        input::placeholder {
+            color: #203647c9;
+            font-style: italic;
+        }
+        
+        input:focus {
+            outline: none;
+        }
+        
+        .bar {
+            position: relative;
+            display: block;
+        }
+        
+        .bar:before,
+        .bar:after {
+            content: "";
+            height: 3px;
+            width: 0;
+            bottom: 0px;
+            position: absolute;
+            background: #203647;
+            transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -webkit-transition: 0.2s ease all;
+        }
+        
+        .bar:before {
+            left: 50%;
+        }
+        
+        .bar:after {
+            right: 50%;
+        }
+        
+        input:focus~.bar:before,
+        input:focus~.bar:after {
+            width: 50%;
+        }
+        
+        .abone {
+            color: white;
+            background-color: #203647;
+            padding: 10px 12px;
+            float: right;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+        
+        .abone:hover {
+            background-color: white;
+            color: #203647;
+            box-shadow: 0px 1px 5px #203647;
+        }
+        
+        .e-bulten-head,
+        .wp-head {
+            color: #203647;
+            font-weight: bold;
+        }
+        
+        .wp-button {
+            margin-top: 0px;
+        }
+        
+        .wp-button i {
+            float: right;
+            font-size: 58px;
+            color: #203647;
+            margin-top: 0px;
+        }
+        
+        .wp-button i:hover {
+            color: white;
+            cursor: pointer;
+        }
+        
+        button {
+            border: none;
+        }
+        
+        .main .carousel-inner {
+            padding: 15px;
+            ;
+        }
+        
+        .main .carousel-item img {
+            height: 410px;
+        }
+        /*************************ORTA BÖLÜM******************************/
+        
+        .alt-content {
+            display: flex;
+            flex-flow: row wrap;
+            margin-top: 50px;
+            padding: 0px;
+            margin-bottom: 50px;
+        }
+        
+        .alt-content>* {
+            flex: 1 100%;
+        }
+        
+        .banner-1 {
+            background-color: rgba(255, 217, 0, 0);
+            box-shadow: 0px 1px 3px #203647;
+            padding: 15px;
+        }
+        
+        .banner-2 {
+            background-color: rgba(255, 192, 203, 0);
+            box-shadow: 0px 1px 3px #203647;
+            padding: 15px;
+        }
+        
+        .c-banner {
+            box-shadow: 0px 1px 3px #203647;
+            padding: 30px 20px;
+        }
+        
+        .alt-content .carousel-item {
+            width: 265px;
+        }
+        /****************FOOTER*************************/
+        
+        footer {
+            background-color: #0f0f0f;
+            padding: 0px;
+            font-size: 14px;
+        }
+        
+        .wrapper {
+            display: flex;
+            flex-flow: row wrap;
+            padding-top: 30px;
+            padding-bottom: 15px;
+            font-family: Arial, sans-serif;
+            color: rgb(202, 201, 201);
+        }
+        
+        .wrapper>* {
+            flex: 1 100%;
+        }
+        
+        .mobile-footer {
+            display: none;
+        }
+        
+        .aside-7 a i,
+        .aside-4 a i,
+        .aside-5 a i,
+        .aside-6 a i {
+            color: red;
+            margin-right: 10px;
+            font-size: 18px
+        }
+        
+        .aside-7 a,
+        .aside-4 a,
+        .aside-5 a,
+        .aside-6 a {
+            color: rgb(202, 201, 201);
+        }
+        
+        .baslik {
+            font-size: 22px;
+        }
+        
+        .wrapper div {
+            margin-bottom: 10px;
+        }
+        
+        .card-footer {
+            padding-bottom: 5px;
+            padding-top: 10px;
+        }
+        
+        .card-footer p {
+            font-size: 13px;
+        }
+        /********************************************    RESPONSIVE        *******************************************************************************/
+        
+        @media all and (min-width: 600px) {
+            .aside {
+                flex: 1 0 0;
+            }
+        }
+        
+        @media all and (min-width: 800px) {
+            .aside-7 {
+                flex-basis: 40%;
+            }
+            .aside-4 {
+                order: 2;
+                flex-basis: 24%;
+            }
+            .aside-7 {
+                order: 1;
+            }
+            .aside-5 {
+                order: 3;
+                flex-basis: 17%;
+            }
+            .aside-6 {
+                order: 4;
+                flex-basis: 17%;
+            }
+        }
+        
+        @media all and (min-width: 601px) {
+            .main {
+                flex: 3 0px;
+            }
+            .aside-1 {
+                order: 1;
+            }
+            .main {
+                order: 2;
+            }
+            .aside-2 {
+                order: 3;
+            }
+            .wp-content {
+                margin-bottom: 0px;
+            }
+        }
+        
+        @media all and (min-width: 769px) {
+            .c-banner {
+                flex: 3 0px;
+            }
+            .banner-1 {
+                order: 1;
+            }
+            .c-banner {
+                order: 2;
+                margin: 0px 50px;
+            }
+            .banner-2 {
+                order: 3;
+            }
+        }
+        
+        @media screen and (max-width:992px) {
+            .aside-6 {
+                display: none;
+            }
+            .aside-7 {
+                flex-basis: 50%;
+                padding-right: 10px;
+            }
+            .aside-4 {
+                flex-basis: 30%;
+            }
+            .aside-5 {
+                flex-basis: 20%;
+                padding-left: 10px;
+            }
+        }
+        
+        @media screen and (max-width:767px) {
+            .aside-7 {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+            .aside-4,
+            .aside-5 {
+                display: none;
+            }
+            .mobile-footer {
+                display: block;
+            }
+            .wrapper {
+                padding-bottom: 0px;
+            }
+        }
+        
+        @media screen and (max-width:575px) {
+            .aside-7 {
+                flex-basis: 60%;
+                padding: 0px 5%;
+            }
+        }
+        
+        .hidden-wp {
+            display: none;
+        }
+        
+        @media screen and (max-width:1199px) {
+            .alt-content .carousel-item {
+                width: 220px;
+            }
+            .alt-content .carousel-item img {
+                height: 220px;
+            }
+            .c-banner {
+                padding: 20px;
+            }
+            .e-bulten-head {
+                font-size: 24px;
+            }
+            .group {
+                margin-top: 15px;
+            }
+            .group input {
+                font-size: 18px;
+            }
+            .abone {
+                margin-top: 28px;
+            }
+            .main .carousel img {
+                height: 350px;
+            }
+        }
+        
+        @media screen and (max-width:992px) {
+            #logo {
+                display: block;
+            }
+            #logo2 {
+                display: none;
+            }
+            .media {
+                display: grid;
+                grid-template-columns: 20px 20px 20px 20px 20px;
+                gap: 20px;
+                -webkit-gap: 20px;
+            }
+            .alt-content .carousel-item {
+                width: 162px;
+            }
+            .alt-content .carousel-item img {
+                height: 162px;
+            }
+            .banner-1,
+            .banner-2 {
+                padding: 10px;
+            }
+            .c-banner {
+                padding: 15px
+            }
+            .e-bulten-head {
+                font-size: 18px;
+            }
+            .group input {
+                font-size: 15px;
+                height: 25px;
+            }
+            .abone {
+                margin-top: 15px;
+                padding: 3px 8px;
+            }
+            .main .carousel img {
+                height: 270px;
+            }
+        }
+        
+        @media screen and (max-width:767px) {
+            .alt-content .carousel-item {
+                width: 225px;
+            }
+            .alt-content .carousel-item img {
+                height: 225px;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            .banner-1,
+            .banner-2 {
+                display: none;
+            }
+        }
+        
+        @media screen and (max-width:600px) {
+            .aside-1 {
+                display: none;
+            }
+        }
+        
+        @media screen and (max-width:992px) {}
+        
+        @media screen and (min-width:768px) and (max-width:992px) {
+            .aside-2 {
+                padding: 10px;
+            }
+            input {
+                font-size: 18px;
+                border-bottom: 3px solid white;
+            }
+            .wp-content {
+                font-size: 20px;
+                margin-bottom: 0px;
+            }
+            .wp-button {
+                font-size: 35px;
+                padding: 4px 15px;
+                border-radius: 8px;
+                margin-top: 25px;
+            }
+            .e-dergi-button {
+                padding: 8px 0px;
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+            .dergi {
+                margin-bottom: 0px
+            }
+            .main .carousel-inner {
+                padding: 10px
+            }
+        }
+        
+        @media screen and (max-width:769px) {
+            .aside-2 {
+                padding: 5px
+            }
+            .main .carousel-inner {
+                padding: 5px;
+            }
+            .main .carousel-item img {
+                height: 195px;
+            }
+            .e-dergi-button {
+                margin-top: 5px;
+                padding: 5px 0px;
+                font-size: 14px;
+            }
+            .c-banner {
+                margin-bottom: 50px;
+            }
+            .banner-1 {
+                margin-right: 25px;
+            }
+            .banner-2 {
+                margin-left: 25px;
+            }
+        }
+        
+        @media screen and (max-width:600px) {
+            .main .carousel-inner {
+                padding: 5px;
+            }
+            .main .carousel-item p {
+                font-size: 12px;
+            }
+            .main .carousel-caption {
+                padding: 5px;
+            }
+            .content .aside-2 {
+                box-shadow: 0px 0px 0px rgba(255, 0, 0, 0);
+                padding: 0px 80px;
+            }
+            .e-dergi {
+                box-shadow: 0px 1px 3px #203647;
+                padding: 10px
+            }
+            .big-main {
+                padding: 0px 10px;
+            }
+            .aside-2 {
+                margin-bottom: 40px;
+            }
+            .main {
+                margin: 0px 0px;
+            }
+            .main .carousel-item img {
+                height: auto;
+            }
+        }

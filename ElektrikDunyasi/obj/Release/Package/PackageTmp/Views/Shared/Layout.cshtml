@@ -1,0 +1,90 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Elektrik Dünyası Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body style=" background-color: rgb(252, 252, 210)">
+
+    <div class="wrapper container" style="margin-bottom:50px; padding-left:40px;">
+        <ul>
+            <li>
+                Genel Yönetim
+                <ul>
+
+                    <li><a href="/About/Index">Hakkımızda</a></li>
+                    <li><a href="/Banners/MainBanners">Banner Orta</a></li>
+                    <li><a href="/Banners/LeftBanners">Banner Sol</a></li>
+                    <li><a href="/Banners/RightBanners">Banner Sağ</a></li>
+                </ul>
+            </li>
+            <li>
+                Kategoriler
+                <ul>
+                    <li><a href="/Haberler/Index">Haberler</a></li>
+                    <li><a href="/Teknoloji/Index">Teknoloji</a></li>
+                    <li><a href="/Roportaj/Index">Röportaj</a></li>
+                    <li><a href="/Makaleler/Index">Makaleler</a></li>
+                </ul>
+            </li>
+            <li>
+                Dergi-PDF
+                <ul>
+                    <li><a href="/Edergi/Index">E-Dergi</a></li>
+                    <li><a href="/Dergi/Index">PDF</a></li>
+
+                </ul>
+            </li>
+            <li>
+                Diğer İşlemler
+                <ul>
+
+                    <li><a href="/Contact/Abone">Abone İstekleri</a> </li>
+                    <li><a href="/Editor/Index">Editörden</a> </li>
+                    <li><a href="/Sektorden/Index">Sektörden</a> </li>
+                    <li><a href="/Akademisyen/Index">Akademisyen</a> </li>
+
+                </ul>
+            </li>
+            <li>
+                Şirket Bilgi
+                <ul>
+                    <li><a href="/Contact/Index"> İletişim</a></li>
+                    <li><a href="/ElektKunye/Index"> Künye</a></li>
+
+                </ul>
+            </li>
+
+            <li><a href="/Panel/LogOut"> Çıkış</a></li>
+
+        </ul>
+    </div>
+
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
+

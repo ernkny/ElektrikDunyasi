@@ -1,0 +1,40 @@
+﻿
+@using ElektrikDunyasi.Models.Entity;
+@model List<Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="container ">
+    <h1 style="padding:10px; font-family:bold; font-weight:700; text-align:center">İletişim Bilgileri</h1>
+    <br />
+    <table class="table table-bordered bg-light">
+        <tr>
+            <th>Telefon</th>
+            <th>Faks</th>
+            <th>Adress</th>
+            <th>Email</th>
+            <th>Güncelle</th>
+
+
+        </tr>
+        @foreach (var cont in Model)
+        {
+                <tr>
+        
+                    <td style="width:30%">@cont.Telefon </td>
+                    <td style="width:20%">@cont.Faks</td>
+
+                    <td style="width:15%">@cont.Address</td>
+                    <td style="width:15%">@cont.Email</td>
+
+                    <td style="width:5%"><a href="/Contact/ContactGetir/@cont.ContactId" class="btn btn-success">Güncelle</a></td>
+                </tr>
+        }
+
+    </table>
+</div>
+
+
+

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DergiElektrikModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Haberler">
+    <Key>
+      <PropertyRef Name="HaberId" />
+    </Key>
+    <Property Name="HaberId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageId" Type="Int32" />
+    <Property Name="HaberBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HaberYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Images" Relationship="Self.FK_Haberler_Images" FromRole="Haberler" ToRole="Images" />
+  </EntityType>
+  <EntityType Name="Images">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Haberler" Relationship="Self.FK_Haberler_Images" FromRole="Images" ToRole="Haberler" />
+    <NavigationProperty Name="Rportaj" Relationship="Self.FK_Rportaj_Images" FromRole="Images" ToRole="Rportaj" />
+    <NavigationProperty Name="Urun" Relationship="Self.FK_Urun_Images" FromRole="Images" ToRole="Urun" />
+  </EntityType>
+  <EntityType Name="Rportaj">
+    <Key>
+      <PropertyRef Name="RportajId" />
+    </Key>
+    <Property Name="RportajId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageId" Type="Int32" />
+    <Property Name="RportajBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RportajYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Images" Relationship="Self.FK_Rportaj_Images" FromRole="Rportaj" ToRole="Images" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Urun">
+    <Key>
+      <PropertyRef Name="UrunId" />
+    </Key>
+    <Property Name="UrunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageId" Type="Int32" />
+    <Property Name="UrunBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UrunYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Images" Relationship="Self.FK_Urun_Images" FromRole="Urun" ToRole="Images" />
+  </EntityType>
+  <Association Name="FK_Haberler_Images">
+    <End Role="Images" Type="Self.Images" Multiplicity="0..1" />
+    <End Role="Haberler" Type="Self.Haberler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Images">
+        <PropertyRef Name="ImageId" />
+      </Principal>
+      <Dependent Role="Haberler">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rportaj_Images">
+    <End Role="Images" Type="Self.Images" Multiplicity="0..1" />
+    <End Role="Rportaj" Type="Self.Rportaj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Images">
+        <PropertyRef Name="ImageId" />
+      </Principal>
+      <Dependent Role="Rportaj">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urun_Images">
+    <End Role="Images" Type="Self.Images" Multiplicity="0..1" />
+    <End Role="Urun" Type="Self.Urun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Images">
+        <PropertyRef Name="ImageId" />
+      </Principal>
+      <Dependent Role="Urun">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DergiElektrikEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Haberler" EntityType="Self.Haberler" />
+    <EntitySet Name="Images" EntityType="Self.Images" />
+    <EntitySet Name="Rportaj" EntityType="Self.Rportaj" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Urun" EntityType="Self.Urun" />
+    <AssociationSet Name="FK_Haberler_Images" Association="Self.FK_Haberler_Images">
+      <End Role="Images" EntitySet="Images" />
+      <End Role="Haberler" EntitySet="Haberler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rportaj_Images" Association="Self.FK_Rportaj_Images">
+      <End Role="Images" EntitySet="Images" />
+      <End Role="Rportaj" EntitySet="Rportaj" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urun_Images" Association="Self.FK_Urun_Images">
+      <End Role="Images" EntitySet="Images" />
+      <End Role="Urun" EntitySet="Urun" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

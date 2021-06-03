@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.haber-page-main {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 35px;
+}.page-sol img {    max-width: 100%;    height: auto}
+
+.haber-page {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.haber-page>* {
+    flex: 1 100%;
+}
+
+.page-sol {
+    text-align: left;
+    background: white;
+    margin-right: 35px;
+    box-shadow: 0px 1px 3px #203647;
+}
+
+.page-sol h3 {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.page-dergi {
+    padding: 7px;
+    box-shadow: 0px 1px 3px #203647;
+    background: rgba(255, 255, 255, 0.781);
+}
+
+.page-sol p {
+    text-indent: 25px;
+}
+
+.edit-foto {
+    padding: 7px;
+    box-shadow: 0px 1px 3px #203647;
+    background-color: rgba(255, 255, 255, 0.781);
+}
+
+@media all and (min-width: 992px) {
+    .aside {
+        flex: 1 0 0;
+    }
+}
+
+@media all and (min-width: 992px) {
+    .page-sol {
+        flex: 3 0px;
+    }
+    .page-sol {
+        order: 2;
+    }
+    .page-sag {
+        order: 3;
+    }
+}
+
+.alt-cizgi {
+    width: 100%;
+    border-top: 2px solid rgb(189, 11, 11);
+    margin-bottom: 5px;
+}
+
+.page-tarih {
+    color: rgb(71, 71, 71);
+    display: block;
+}
+
+.page-tarih i {
+    margin-right: 5px;
+}
+
+.page-sol img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.en-cok-page .panel ul li table tr td {
+    background-color: rgba(255, 255, 255, 0.877);
+    border-bottom: 2px solid rgb(155, 19, 19);
+    padding-right: 3px;
+}
+
+@media screen and (min-width:280px) {
+    .haber-page-main {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    .page-sag {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .page-sol {
+        margin-right: 0px;
+    }
+    .page-sol h3 {
+        font-size: 22px;
+    }
+    .page-sol p {
+        font-size: 15px;
+    }
+    .page-sol h4 {
+        font-size: 20px;
+    }
+    .en-cok-page .panel .row ul li {
+        width: 100%;
+    }
+    .page-baslik {
+        font-weight: bold;
+    }
+    .en-cok-page {
+        margin-top: 35px;
+        padding: 0px 15px;
+    }
+    .main-hab-page {
+        padding: 5px;
+        box-shadow: 0px 1px 3px #203647;
+    }
+    .main-hab-page img {
+        width: 50px;
+        height: 60px;
+    }
+    .alt-page {
+        padding: 20px;
+    }
+    .edit-foto {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+    .edit-foto img {
+        width: 100%;
+    }
+    .page-sag {
+        padding: 0px 50px;
+    }
+}
+
+@media screen and (min-width:360px) {
+    .main-haber {
+        padding: 40px;
+    }
+}
+
+@media screen and (min-width:400px) {
+    .haber-page-main {
+        padding: 0px 20px;
+    }
+}
+
+@media screen and (min-width:450px) {
+    .page-sag img {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:500px) {
+    .page-sag {
+        display: flex;
+        padding: 0px;
+        margin-top: 35px;
+    }
+    .edit-foto {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .edit-foto img {
+        height: 100%;
+        width: 100%;
+    }
+    .main-page-dergi img {
+        height: 250px;
+    }
+    .main-page-dergi {
+        margin-left: 35px;
+        flex-basis: 70%;
+    }
+}
+
+@media screen and (min-width:576px) {
+    .haber-page-main {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px;
+    }
+    .en-cok-page .panel .row ul li {
+        width: 100%;
+    }
+    .main-page-dergi {
+        margin-left: 35px;
+        flex-basis: 60%;
+    }
+    .main-page-dergi img {
+        height: 280px;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .en-cok-page {
+        padding: 0px;
+    }
+    .edit-foto {
+        flex-basis: 60%;
+    }
+    .main-page-dergi img {
+        height: 440px;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .page-sol {
+        margin-right: 35px;
+    }
+    .page-sag {
+        flex-direction: column;
+        margin: 0px;
+    }
+    .page-sag img {
+        height: auto;
+    }
+    .edit-foto {
+        flex-basis: 0;
+    }
+    .main-page-dergi {
+        margin-left: 0px;
+        margin-top: 35px;
+    }
+    .en-cok-page {
+        margin-top: 0px;
+        padding: 0px;
+    }
+    .page-baslik {
+        font-size: 10px;
+    }
+    .page-icerik {
+        font-size: 10px;
+        margin-bottom: 0px;
+    }
+    .en-cok-page ul li table tr td {
+        padding-right: 0px;
+    }
+    .page-sol h3 {
+        font-size: 28px;
+    }
+    .page-sol h4 {
+        font-size: 24px;
+    }
+    .page-sol p {
+        text-indent: 25px;
+        font-size: 17px;
+    }
+    .main-page-dergi button:hover {
+        box-shadow: 0px 1px 3px black;
+        font-weight: bold;
+        background-color: white
+    }
+}

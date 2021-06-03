@@ -1,0 +1,95 @@
+﻿@model ElektrikDunyasi.Models.ViewModel
+@{
+    ViewBag.Title = "Sektor";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<head>
+
+    <link rel="stylesheet" href="~/Content/Nav/css/haberler.css">
+    <link rel="stylesheet" href="~/Content/Nav/css/haber-page.css">
+
+</head>
+<div class="container haber-page-main">
+    <div class="haber-page">
+        <article class="page-sol">
+
+            @foreach (var item in Model.sektor.Where(m => m.SektorId == Model.id))
+            {
+
+
+                <div class="alt-page">
+                    <h3>@item.Baslik</h3>
+                    <div class="alt-cizgi " style="border-top-color:#636363;"></div>
+                    <span class="page-tarih "><i class="fas fa-calendar-alt "></i>@item.Tarih.ToString().Substring(0, 10)</span>
+                    <img class="img-fluid " src="@item.ImageUrl.Replace("..","") " alt="@item.Keywords ">
+                    <p class="text-justify ">
+                        @Html.Raw(item.Yazi)
+                    </p>
+
+                </div>
+            }
+        </article>
+        <aside class="aside page-sag ">
+            <!-- En Çok Okunanlar -->
+            <div class="en-cok-page ">
+                <div class="main-hab-page ">
+                    <div class="panel ">
+                        <div class="panel-heading ">
+                            <div class="hab " style="border-bottom-color: #636363; border-left-color: #636363; color: #636363;">
+                                SEKTÖRDEN ÖNE ÇIKANLAR
+                            </div>
+                        </div>
+                        <div class="panel ">
+                            <div class="row ">
+                                <ul class="demo1 ">
+                                    @foreach (var item in Model.sektor)
+                                    {
+
+                                        <li class="news-item">
+                                            <a href="/Home/Sektor/@item.SektorId">
+                                                <table cellpadding="4">
+                                                    <tr>
+                                                        <td style="border-bottom-color:#636363;"><img src="@item.ImageUrl.Replace("..","")" width="60" class="" /></td>
+                                                        <td style="border-bottom-color:#636363;">
+                                                            <span class="haber-floating-baslik">
+                                                                @{int a; if (item.Baslik.Length > 27) { a = 27; } else { a = item.Baslik.Length; }
+                                                                }
+                                                                @item.Baslik.Substring(0, a) ...
+                                                            </span>
+                                                            <p class="page-icerik">
+                                                                @{string metin = System.Text.RegularExpressions.Regex.Replace(item.Yazi, @"<(.|\n)*?>", string.Empty);
+                                                                    int c; if (metin.Length >= 81) { c = 81; } else { c = metin.Length; }}
+                                                                @Html.Raw(metin.Substring(0, c)) ...
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </a>
+
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-page-dergi ">
+                <div class="page-dergi ">
+                    @foreach (var item in Model.eDergi)
+                    {
+                        <a target="_blank" href="/Home/Dergi"><img class="img-fluid" src="@item.EDergiResimUrl.Replace("..","")" alt=""></a>
+                        <a target="_blank" href="/Home/Dergi"><button class="oku w-100">Şimdi Oku</button></a>
+                    }
+                </div>
+            </div>
+        </aside>
+
+
+    </div>
+</div>
+
+
+
+

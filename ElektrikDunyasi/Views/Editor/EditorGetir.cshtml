@@ -1,0 +1,48 @@
+﻿@model ElektrikDunyasi.Models.Entity.Editor
+@{
+    ViewBag.Title = "EditorGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("EditorGuncelle", "Editor", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group container">
+        @Html.TextBoxFor(h => h.EditorId, new { style = "display:none;" })
+        <label>Yazı Başlık</label>
+        @Html.TextBoxFor(h => h.Baslik, new { @class = "form-control", })
+        <br />
+        
+        <label>Yazı Keywords</label>
+        @Html.TextBoxFor(h => h.Keywords, new { @class = "form-control", })
+        <br />
+        <label>Tarih</label>
+        @Html.TextBoxFor(h => h.Tarih, new { @class = "form-control", @type = "datetime-local" })
+        <br />
+
+
+
+
+        <label>Haber İçerik</label>
+        @Html.TextAreaFor(h => h.Icerik, new { @class = "form-control", @id = "Icerik" })
+        <br />
+
+
+    </div>
+    <div class="container">
+        <button onclick="return confirm('Güncellemek İstiyor musunuz?')" class=" btn btn-warning">Güncelle</button>
+    </div>
+}
+
+
+
+
+<script src="~/Scripts/ckeditor/ckeditor.js">
+
+</script>
+<script>
+    CKEDITOR.replace('Icerik');
+</script>
+
+
+
