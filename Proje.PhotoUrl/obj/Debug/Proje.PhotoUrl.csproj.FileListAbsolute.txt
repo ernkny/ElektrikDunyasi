@@ -1,6 +1,0 @@
-C:\Users\erenk\source\repos\ElektrikDunyasi\Proje.PhotoUrl\bin\Debug\Proje.PhotoUrl.dll
-C:\Users\erenk\source\repos\ElektrikDunyasi\Proje.PhotoUrl\bin\Debug\Proje.PhotoUrl.pdb
-C:\Users\erenk\source\repos\ElektrikDunyasi\Proje.PhotoUrl\obj\Debug\Proje.PhotoUrl.csprojAssemblyReference.cache
-C:\Users\erenk\source\repos\ElektrikDunyasi\Proje.PhotoUrl\obj\Debug\Proje.PhotoUrl.csproj.CoreCompileInputs.cache
-C:\Users\erenk\source\repos\ElektrikDunyasi\Proje.PhotoUrl\obj\Debug\Proje.PhotoUrl.dll
-C:\Users\erenk\source\repos\ElektrikDunyasi\Proje.PhotoUrl\obj\Debug\Proje.PhotoUrl.pdb
