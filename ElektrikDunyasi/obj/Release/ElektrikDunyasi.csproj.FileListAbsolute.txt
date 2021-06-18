@@ -153,8 +153,8 @@ C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\System.Web.WebPa
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\Newtonsoft.Json.xml
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\Antlr3.Runtime.pdb
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\obj\Release\ElektrikDunyasi.csprojAssemblyReference.cache
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\obj\Release\ElektrikDunyasi.csproj.CoreCompileInputs.cache
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\obj\Release\ElektrikDunyasi.csproj.CopyComplete
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\obj\Release\ElektrikDunyasi.dll
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\obj\Release\ElektrikDunyasi.pdb
+C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\obj\Release\ElektrikDunyasi.csproj.AssemblyReference.cache

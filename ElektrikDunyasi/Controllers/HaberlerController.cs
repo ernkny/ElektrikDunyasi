@@ -48,6 +48,7 @@ namespace ElektrikDunyasi.Controllers
                         if (extensiton == ".JPG" || extensiton == ".png" || extensiton == ".jpg" || extensiton == ".PNG")
                         {
                             string guid = Guid.NewGuid().ToString();
+                            
                             string pathway = Path.Combine(Server.MapPath("~/Images/HaberImages/"), Path.GetFileName(guid + extensiton));
                             file.SaveAs(pathway);
                             h.DeleteUrl = pathway;

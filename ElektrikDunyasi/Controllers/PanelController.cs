@@ -42,5 +42,9 @@ namespace ElektrikDunyasi.Controllers
             return RedirectToAction("GirisYap");
 
         }
+        public ActionResult deneme()
+        {
+            return View();
+        }
     }
 }

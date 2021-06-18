@@ -15,11 +15,12 @@ namespace ElektrikDunyasi.Models.Entity
     public partial class Haberler
     {
         public int HaberId { get; set; }
+        public Nullable<int> ImageId { get; set; }
         public string HaberBaslik { get; set; }
         public string HaberYazi { get; set; }
         public string HaberEkleyen { get; set; }
-        public Nullable<System.DateTime> Tarih { get; set; }
         public string ImageUrl { get; set; }
+        public Nullable<System.DateTime> Tarih { get; set; }
         public string DeleteUrl { get; set; }
         public string Keywords { get; set; }
     }

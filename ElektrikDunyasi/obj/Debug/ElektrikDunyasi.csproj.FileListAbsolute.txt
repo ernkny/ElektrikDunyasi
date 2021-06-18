@@ -151,10 +151,10 @@ C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\Microsoft.Extens
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\Microsoft.Net.Http.Headers.xml
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\System.Text.Encodings.Web.xml
-C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\obj\Debug\ElektrikDunyasi.csprojAssemblyReference.cache
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\PagedList.dll
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\PagedList.Mvc.dll
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\PagedList.xml
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\PagedList.Mvc.xml
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\proje.md5.dll
 C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\bin\proje.md5.pdb
+C:\Users\erenk\source\repos\ElektrikDunyasi\ElektrikDunyasi\obj\Debug\ElektrikDunyasi.csproj.AssemblyReference.cache

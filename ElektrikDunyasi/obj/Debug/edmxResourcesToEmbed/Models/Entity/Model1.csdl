@@ -1,62 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DergiElektrikModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Haberler">
+  <EntityType Name="AboneInfo">
     <Key>
-      <PropertyRef Name="HaberId" />
+      <PropertyRef Name="AboneId" />
     </Key>
-    <Property Name="HaberId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="HaberBaslik" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="HaberYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="HaberEkleyen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AboneId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AboneName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Tarih" Type="DateTime" Precision="7" />
-    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="Rportaj">
+  <EntityType Name="Akedemisyen">
     <Key>
-      <PropertyRef Name="RportajId" />
+      <PropertyRef Name="AkedemiId" />
     </Key>
-    <Property Name="RportajId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RportajBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="RportajYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AkedemiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Yazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ekleyen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Tarih" Type="DateTime" Precision="7" />
-    <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <EntityContainer Name="DergiElektrikEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Haberler" EntityType="Self.Haberler" />
-    <EntitySet Name="Rportaj" EntityType="Self.Rportaj" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-    <EntitySet Name="Contact" EntityType="DergiElektrikModel.Contact" />
-    <EntitySet Name="Hakkimizda" EntityType="DergiElektrikModel.Hakkimizda" />
-    <EntitySet Name="SiteYonetim" EntityType="DergiElektrikModel.SiteYonetim" />
-    <EntitySet Name="Teknoloji" EntityType="DergiElektrikModel.Teknoloji" />
-    <EntitySet Name="Makaleler" EntityType="DergiElektrikModel.Makaleler" />
-    <EntitySet Name="Dergi" EntityType="DergiElektrikModel.Dergi" />
-    <EntitySet Name="EDergi" EntityType="DergiElektrikModel.EDergi" />
-    <EntitySet Name="LoginAdmin" EntityType="DergiElektrikModel.LoginAdmin" />
-    <EntitySet Name="ElektKunye" EntityType="DergiElektrikModel.ElektKunye" />
-    <EntitySet Name="LeftBanner" EntityType="DergiElektrikModel.LeftBanner" />
-    <EntitySet Name="MainBanner" EntityType="DergiElektrikModel.MainBanner" />
-    <EntitySet Name="RightBanner" EntityType="DergiElektrikModel.RightBanner" />
-    <EntitySet Name="AboneInfo" EntityType="DergiElektrikModel.AboneInfo" />
-    <EntitySet Name="Editor" EntityType="DergiElektrikModel.Editor" />
-    <EntitySet Name="Sektorden" EntityType="DergiElektrikModel.Sektorden" />
-    <EntitySet Name="stdImages" EntityType="DergiElektrikModel.stdImages" />
-    <EntitySet Name="Akedemisyen" EntityType="DergiElektrikModel.Akedemisyen" />
-  </EntityContainer>
   <EntityType Name="Contact">
     <Key>
       <PropertyRef Name="ContactId" />
@@ -66,47 +29,6 @@
     <Property Name="Telefon" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Faks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="Hakkimizda">
-    <Key>
-      <PropertyRef Name="HakkimizdaId" />
-    </Key>
-    <Property Name="HakkimizdaIcerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="HakkimizdaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-  </EntityType>
-  <EntityType Name="SiteYonetim">
-    <Key>
-      <PropertyRef Name="SıteID" />
-    </Key>
-    <Property Name="SıteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SiteBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="SiteAciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="SiteKeywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="Teknoloji">
-    <Key>
-      <PropertyRef Name="TeknoId" />
-    </Key>
-    <Property Name="TeknoBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="TeknoYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="TeknoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Tarih" Type="DateTime" Precision="7" />
-    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="Makaleler">
-    <Key>
-      <PropertyRef Name="MakaleId" />
-    </Key>
-    <Property Name="MakaleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MakaleBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Ekleyen" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Tarih" Type="DateTime" Precision="7" />
-    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="MakaleYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Dergi">
     <Key>
@@ -125,16 +47,18 @@
       <PropertyRef Name="EDergiId" />
     </Key>
     <Property Name="EDergiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="EDegiUrl" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EDegiUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="EDergiResimUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="LoginAdmin">
+  <EntityType Name="Editor">
     <Key>
-      <PropertyRef Name="UserId" />
+      <PropertyRef Name="EditorId" />
     </Key>
-    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="UserPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EditorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tarih" Type="DateTime" Precision="7" />
+    <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="ElektKunye">
     <Key>
@@ -162,6 +86,27 @@
     <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="Haberler">
+    <Key>
+      <PropertyRef Name="HaberId" />
+    </Key>
+    <Property Name="HaberId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageId" Type="Int32" />
+    <Property Name="HaberBaslik" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="HaberYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HaberEkleyen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tarih" Type="DateTime" Precision="7" />
+    <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Hakkimizda">
+    <Key>
+      <PropertyRef Name="HakkimizdaId" />
+    </Key>
+    <Property Name="HakkimizdaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HakkimizdaIcerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
   <EntityType Name="LeftBanner">
     <Key>
       <PropertyRef Name="LeftBannerId" />
@@ -171,6 +116,14 @@
     <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="LinkUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Tarih" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="LoginAdmin">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="MainBanner">
     <Key>
@@ -183,6 +136,19 @@
     <Property Name="MainBannerBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="Makaleler">
+    <Key>
+      <PropertyRef Name="MakaleId" />
+    </Key>
+    <Property Name="MakaleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MakaleBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ekleyen" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Tarih" Type="DateTime" Precision="7" />
+    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MakaleYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="RightBanner">
     <Key>
       <PropertyRef Name="RightBannerId" />
@@ -193,22 +159,15 @@
     <Property Name="LinkUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Tarih" Type="DateTime" Precision="7" />
   </EntityType>
-  <EntityType Name="AboneInfo">
+  <EntityType Name="Rportaj">
     <Key>
-      <PropertyRef Name="AboneId" />
+      <PropertyRef Name="RportajId" />
     </Key>
-    <Property Name="AboneId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="AboneName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Tarih" Type="DateTime" Precision="7" />
-  </EntityType>
-  <EntityType Name="Editor">
-    <Key>
-      <PropertyRef Name="EditorId" />
-    </Key>
-    <Property Name="EditorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RportajId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RportajBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RportajYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Tarih" Type="DateTime" Precision="7" />
     <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
@@ -216,13 +175,22 @@
     <Key>
       <PropertyRef Name="SektorId" />
     </Key>
-    <Property Name="SektorId" Type="Int32" Nullable="false" />
+    <Property Name="SektorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Yazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Tarih" Type="DateTime" Precision="7" />
     <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SiteYonetim">
+    <Key>
+      <PropertyRef Name="SıteID" />
+    </Key>
+    <Property Name="SıteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SiteAciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SiteKeywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="stdImages">
     <Key>
@@ -232,15 +200,37 @@
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="Akedemisyen">
+  <EntityType Name="Teknoloji">
     <Key>
-      <PropertyRef Name="AkedemiId" />
+      <PropertyRef Name="TeknoId" />
     </Key>
-    <Property Name="AkedemiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Yazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Ekleyen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TeknoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeknoBaslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TeknoYazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Tarih" Type="DateTime" Precision="7" />
-    <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DeleteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityContainer Name="DergiElektrikEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AboneInfo" EntityType="Self.AboneInfo" />
+    <EntitySet Name="Akedemisyen" EntityType="Self.Akedemisyen" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" />
+    <EntitySet Name="Dergi" EntityType="Self.Dergi" />
+    <EntitySet Name="EDergi" EntityType="Self.EDergi" />
+    <EntitySet Name="Editor" EntityType="Self.Editor" />
+    <EntitySet Name="ElektKunye" EntityType="Self.ElektKunye" />
+    <EntitySet Name="Haberler" EntityType="Self.Haberler" />
+    <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" />
+    <EntitySet Name="LeftBanner" EntityType="Self.LeftBanner" />
+    <EntitySet Name="LoginAdmin" EntityType="Self.LoginAdmin" />
+    <EntitySet Name="MainBanner" EntityType="Self.MainBanner" />
+    <EntitySet Name="Makaleler" EntityType="Self.Makaleler" />
+    <EntitySet Name="RightBanner" EntityType="Self.RightBanner" />
+    <EntitySet Name="Rportaj" EntityType="Self.Rportaj" />
+    <EntitySet Name="Sektorden" EntityType="Self.Sektorden" />
+    <EntitySet Name="SiteYonetim" EntityType="Self.SiteYonetim" />
+    <EntitySet Name="stdImages" EntityType="Self.stdImages" />
+    <EntitySet Name="Teknoloji" EntityType="Self.Teknoloji" />
+  </EntityContainer>
 </Schema>

@@ -25,25 +25,24 @@ namespace ElektrikDunyasi.Models.Entity
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Haberler> Haberler { get; set; }
-        public virtual DbSet<Rportaj> Rportaj { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<AboneInfo> AboneInfo { get; set; }
+        public virtual DbSet<Akedemisyen> Akedemisyen { get; set; }
         public virtual DbSet<Contact> Contact { get; set; }
-        public virtual DbSet<Hakkimizda> Hakkimizda { get; set; }
-        public virtual DbSet<SiteYonetim> SiteYonetim { get; set; }
-        public virtual DbSet<Teknoloji> Teknoloji { get; set; }
-        public virtual DbSet<Makaleler> Makaleler { get; set; }
         public virtual DbSet<Dergi> Dergi { get; set; }
         public virtual DbSet<EDergi> EDergi { get; set; }
-        public virtual DbSet<LoginAdmin> LoginAdmin { get; set; }
-        public virtual DbSet<ElektKunye> ElektKunye { get; set; }
-        public virtual DbSet<LeftBanner> LeftBanner { get; set; }
-        public virtual DbSet<MainBanner> MainBanner { get; set; }
-        public virtual DbSet<RightBanner> RightBanner { get; set; }
-        public virtual DbSet<AboneInfo> AboneInfo { get; set; }
         public virtual DbSet<Editor> Editor { get; set; }
+        public virtual DbSet<ElektKunye> ElektKunye { get; set; }
+        public virtual DbSet<Haberler> Haberler { get; set; }
+        public virtual DbSet<Hakkimizda> Hakkimizda { get; set; }
+        public virtual DbSet<LeftBanner> LeftBanner { get; set; }
+        public virtual DbSet<LoginAdmin> LoginAdmin { get; set; }
+        public virtual DbSet<MainBanner> MainBanner { get; set; }
+        public virtual DbSet<Makaleler> Makaleler { get; set; }
+        public virtual DbSet<RightBanner> RightBanner { get; set; }
+        public virtual DbSet<Rportaj> Rportaj { get; set; }
         public virtual DbSet<Sektorden> Sektorden { get; set; }
+        public virtual DbSet<SiteYonetim> SiteYonetim { get; set; }
         public virtual DbSet<stdImages> stdImages { get; set; }
-        public virtual DbSet<Akedemisyen> Akedemisyen { get; set; }
+        public virtual DbSet<Teknoloji> Teknoloji { get; set; }
     }
 }

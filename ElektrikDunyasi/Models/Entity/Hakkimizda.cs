@@ -14,7 +14,7 @@ namespace ElektrikDunyasi.Models.Entity
     
     public partial class Hakkimizda
     {
-        public string HakkimizdaIcerik { get; set; }
         public int HakkimizdaId { get; set; }
+        public string HakkimizdaIcerik { get; set; }
     }
 }

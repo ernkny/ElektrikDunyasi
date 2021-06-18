@@ -70,9 +70,9 @@
                                         
                                         <div style="background-color:white;  border-bottom: 2px solid #018F00; ">
                                             <table cellpadding="4" >
-
+                                                
                                                 <tr>
-
+                                                   
                                                     <td><img src="@item.ImageUrl" width="60" alt="@item.Keywords" /></td>
 
                                                     <td>
@@ -84,10 +84,11 @@
                                                             @item.TeknoBaslik.Substring(0, a)...
 
                                                         </span>
-
-                                                        @{string metin = System.Text.RegularExpressions.Regex.Replace(item.TeknoYazi, @"<(.|\n)*?>", string.Empty);
-                                                            int d; if (metin.Length > 100) { d = 100; } else { d = metin.Length; }}
-                                                        <p class="vertical-icerik">@Html.Raw(metin.Substring(0, d)) ...</p>
+                                                        <a href="Teknoji/@item.TeknoId">
+                                                            @{string metin = System.Text.RegularExpressions.Regex.Replace(item.TeknoYazi, @"<(.|\n)*?>", string.Empty);
+                                                                int d; if (metin.Length > 100) { d = 100; } else { d = metin.Length; }}
+                                                            <p class="vertical-icerik">@Html.Raw(metin.Substring(0, d)) ...</p>
+                                                        </a>
                                                     </td>
 
                                                 </tr>

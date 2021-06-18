@@ -14,9 +14,9 @@ namespace ElektrikDunyasi.Models.Entity
     
     public partial class Teknoloji
     {
+        public int TeknoId { get; set; }
         public string TeknoBaslik { get; set; }
         public string TeknoYazi { get; set; }
-        public int TeknoId { get; set; }
         public Nullable<System.DateTime> Tarih { get; set; }
         public string ImageUrl { get; set; }
         public string DeleteUrl { get; set; }

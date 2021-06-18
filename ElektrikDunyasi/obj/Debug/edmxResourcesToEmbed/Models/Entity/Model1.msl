@@ -1,52 +1,111 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DergiElektrikModelStoreContainer" CdmEntityContainer="DergiElektrikEntities">
-    <EntitySetMapping Name="Haberler">
-      <EntityTypeMapping TypeName="DergiElektrikModel.Haberler">
-        <MappingFragment StoreEntitySet="Haberler">
-          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
-          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
-          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+    <EntitySetMapping Name="AboneInfo">
+      <EntityTypeMapping TypeName="DergiElektrikModel.AboneInfo">
+        <MappingFragment StoreEntitySet="AboneInfo">
+          <ScalarProperty Name="AboneId" ColumnName="AboneId" />
+          <ScalarProperty Name="AboneName" ColumnName="AboneName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="HaberEkleyen" ColumnName="HaberEkleyen" />
-          <ScalarProperty Name="HaberId" ColumnName="HaberId" />
-          <ScalarProperty Name="HaberBaslik" ColumnName="HaberBaslik" />
-          <ScalarProperty Name="HaberYazi" ColumnName="HaberYazi" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Rportaj">
-      <EntityTypeMapping TypeName="DergiElektrikModel.Rportaj">
-        <MappingFragment StoreEntitySet="Rportaj">
-          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+    <EntitySetMapping Name="Akedemisyen">
+      <EntityTypeMapping TypeName="DergiElektrikModel.Akedemisyen">
+        <MappingFragment StoreEntitySet="Akedemisyen">
+          <ScalarProperty Name="AkedemiId" ColumnName="AkedemiId" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Yazi" ColumnName="Yazi" />
+          <ScalarProperty Name="Ekleyen" ColumnName="Ekleyen" />
           <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
-          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-          <ScalarProperty Name="RportajId" ColumnName="RportajId" />
-          <ScalarProperty Name="RportajBaslik" ColumnName="RportajBaslik" />
-          <ScalarProperty Name="RportajYazi" ColumnName="RportajYazi" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="DergiElektrikModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Contact">
       <EntityTypeMapping TypeName="DergiElektrikModel.Contact">
         <MappingFragment StoreEntitySet="Contact">
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Faks" ColumnName="Faks" />
-          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Faks" ColumnName="Faks" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dergi">
+      <EntityTypeMapping TypeName="DergiElektrikModel.Dergi">
+        <MappingFragment StoreEntitySet="Dergi">
+          <ScalarProperty Name="DergiId" ColumnName="DergiId" />
+          <ScalarProperty Name="DergiBaslik" ColumnName="DergiBaslik" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="DergiUrl" ColumnName="DergiUrl" />
+          <ScalarProperty Name="DergiDeleteUrl" ColumnName="DergiDeleteUrl" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="DeleteImageUrl" ColumnName="DeleteImageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EDergi">
+      <EntityTypeMapping TypeName="DergiElektrikModel.EDergi">
+        <MappingFragment StoreEntitySet="EDergi">
+          <ScalarProperty Name="EDergiId" ColumnName="EDergiId" />
+          <ScalarProperty Name="EDegiUrl" ColumnName="EDegiUrl" />
+          <ScalarProperty Name="EDergiResimUrl" ColumnName="EDergiResimUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Editor">
+      <EntityTypeMapping TypeName="DergiElektrikModel.Editor">
+        <MappingFragment StoreEntitySet="Editor">
+          <ScalarProperty Name="EditorId" ColumnName="EditorId" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElektKunye">
+      <EntityTypeMapping TypeName="DergiElektrikModel.ElektKunye">
+        <MappingFragment StoreEntitySet="ElektKunye">
+          <ScalarProperty Name="KunyeId" ColumnName="KunyeId" />
+          <ScalarProperty Name="Imtyaz" ColumnName="Imtyaz" />
+          <ScalarProperty Name="Sormlu" ColumnName="Sormlu" />
+          <ScalarProperty Name="YayinDanisman" ColumnName="YayinDanisman" />
+          <ScalarProperty Name="YayinKrl" ColumnName="YayinKrl" />
+          <ScalarProperty Name="Reklam" ColumnName="Reklam" />
+          <ScalarProperty Name="ReklamHalk" ColumnName="ReklamHalk" />
+          <ScalarProperty Name="Guney" ColumnName="Guney" />
+          <ScalarProperty Name="Kurye" ColumnName="Kurye" />
+          <ScalarProperty Name="Ceviri" ColumnName="Ceviri" />
+          <ScalarProperty Name="Dogu" ColumnName="Dogu" />
+          <ScalarProperty Name="Iran" ColumnName="Iran" />
+          <ScalarProperty Name="Misir" ColumnName="Misir" />
+          <ScalarProperty Name="Holland" ColumnName="Holland" />
+          <ScalarProperty Name="Poland" ColumnName="Poland" />
+          <ScalarProperty Name="Hukuk" ColumnName="Hukuk" />
+          <ScalarProperty Name="Dagitim" ColumnName="Dagitim" />
+          <ScalarProperty Name="Baski" ColumnName="Baski" />
+          <ScalarProperty Name="Yayin" ColumnName="Yayin" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Haberler">
+      <EntityTypeMapping TypeName="DergiElektrikModel.Haberler">
+        <MappingFragment StoreEntitySet="Haberler">
+          <ScalarProperty Name="HaberId" ColumnName="HaberId" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="HaberBaslik" ColumnName="HaberBaslik" />
+          <ScalarProperty Name="HaberYazi" ColumnName="HaberYazi" />
+          <ScalarProperty Name="HaberEkleyen" ColumnName="HaberEkleyen" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -58,187 +117,118 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SiteYonetim">
-      <EntityTypeMapping TypeName="DergiElektrikModel.SiteYonetim">
-        <MappingFragment StoreEntitySet="SiteYonetim">
-          <ScalarProperty Name="SiteKeywords" ColumnName="SiteKeywords" />
-          <ScalarProperty Name="SiteAciklama" ColumnName="SiteAciklama" />
-          <ScalarProperty Name="SiteBaslik" ColumnName="SiteBaslik" />
-          <ScalarProperty Name="SıteID" ColumnName="SıteID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Teknoloji">
-      <EntityTypeMapping TypeName="DergiElektrikModel.Teknoloji">
-        <MappingFragment StoreEntitySet="Teknoloji">
-          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+    <EntitySetMapping Name="LeftBanner">
+      <EntityTypeMapping TypeName="DergiElektrikModel.LeftBanner">
+        <MappingFragment StoreEntitySet="LeftBanner">
+          <ScalarProperty Name="LeftBannerId" ColumnName="LeftBannerId" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
           <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
-          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
           <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="TeknoId" ColumnName="TeknoId" />
-          <ScalarProperty Name="TeknoYazi" ColumnName="TeknoYazi" />
-          <ScalarProperty Name="TeknoBaslik" ColumnName="TeknoBaslik" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Makaleler">
-      <EntityTypeMapping TypeName="DergiElektrikModel.Makaleler">
-        <MappingFragment StoreEntitySet="Makaleler">
-          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
-          <ScalarProperty Name="MakaleYazi" ColumnName="MakaleYazi" />
-          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
-          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="Ekleyen" ColumnName="Ekleyen" />
-          <ScalarProperty Name="MakaleBaslik" ColumnName="MakaleBaslik" />
-          <ScalarProperty Name="MakaleId" ColumnName="MakaleId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Dergi">
-      <EntityTypeMapping TypeName="DergiElektrikModel.Dergi">
-        <MappingFragment StoreEntitySet="Dergi">
-          <ScalarProperty Name="DeleteImageUrl" ColumnName="DeleteImageUrl" />
-          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-          <ScalarProperty Name="DergiDeleteUrl" ColumnName="DergiDeleteUrl" />
-          <ScalarProperty Name="DergiUrl" ColumnName="DergiUrl" />
-          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="DergiBaslik" ColumnName="DergiBaslik" />
-          <ScalarProperty Name="DergiId" ColumnName="DergiId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EDergi">
-      <EntityTypeMapping TypeName="DergiElektrikModel.EDergi">
-        <MappingFragment StoreEntitySet="EDergi">
-          <ScalarProperty Name="EDergiResimUrl" ColumnName="EDergiResimUrl" />
-          <ScalarProperty Name="EDegiUrl" ColumnName="EDegiUrl" />
-          <ScalarProperty Name="EDergiId" ColumnName="EDergiId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="LoginAdmin">
       <EntityTypeMapping TypeName="DergiElektrikModel.LoginAdmin">
         <MappingFragment StoreEntitySet="LoginAdmin">
-          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ElektKunye">
-      <EntityTypeMapping TypeName="DergiElektrikModel.ElektKunye">
-        <MappingFragment StoreEntitySet="ElektKunye">
-          <ScalarProperty Name="Year" ColumnName="Year" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="Yayin" ColumnName="Yayin" />
-          <ScalarProperty Name="Baski" ColumnName="Baski" />
-          <ScalarProperty Name="Dagitim" ColumnName="Dagitim" />
-          <ScalarProperty Name="Hukuk" ColumnName="Hukuk" />
-          <ScalarProperty Name="Poland" ColumnName="Poland" />
-          <ScalarProperty Name="Holland" ColumnName="Holland" />
-          <ScalarProperty Name="Misir" ColumnName="Misir" />
-          <ScalarProperty Name="Iran" ColumnName="Iran" />
-          <ScalarProperty Name="Dogu" ColumnName="Dogu" />
-          <ScalarProperty Name="Ceviri" ColumnName="Ceviri" />
-          <ScalarProperty Name="Kurye" ColumnName="Kurye" />
-          <ScalarProperty Name="Guney" ColumnName="Guney" />
-          <ScalarProperty Name="ReklamHalk" ColumnName="ReklamHalk" />
-          <ScalarProperty Name="Reklam" ColumnName="Reklam" />
-          <ScalarProperty Name="YayinKrl" ColumnName="YayinKrl" />
-          <ScalarProperty Name="YayinDanisman" ColumnName="YayinDanisman" />
-          <ScalarProperty Name="Sormlu" ColumnName="Sormlu" />
-          <ScalarProperty Name="Imtyaz" ColumnName="Imtyaz" />
-          <ScalarProperty Name="KunyeId" ColumnName="KunyeId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="LeftBanner">
-      <EntityTypeMapping TypeName="DergiElektrikModel.LeftBanner">
-        <MappingFragment StoreEntitySet="LeftBanner">
-          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
-          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
-          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-          <ScalarProperty Name="LeftBannerId" ColumnName="LeftBannerId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MainBanner">
       <EntityTypeMapping TypeName="DergiElektrikModel.MainBanner">
         <MappingFragment StoreEntitySet="MainBanner">
-          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
-          <ScalarProperty Name="MainBannerBaslik" ColumnName="MainBannerBaslik" />
-          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
-          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
           <ScalarProperty Name="MainBannerId" ColumnName="MainBannerId" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="MainBannerBaslik" ColumnName="MainBannerBaslik" />
+          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Makaleler">
+      <EntityTypeMapping TypeName="DergiElektrikModel.Makaleler">
+        <MappingFragment StoreEntitySet="Makaleler">
+          <ScalarProperty Name="MakaleId" ColumnName="MakaleId" />
+          <ScalarProperty Name="MakaleBaslik" ColumnName="MakaleBaslik" />
+          <ScalarProperty Name="Ekleyen" ColumnName="Ekleyen" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+          <ScalarProperty Name="MakaleYazi" ColumnName="MakaleYazi" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="RightBanner">
       <EntityTypeMapping TypeName="DergiElektrikModel.RightBanner">
         <MappingFragment StoreEntitySet="RightBanner">
-          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
-          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
-          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
           <ScalarProperty Name="RightBannerId" ColumnName="RightBannerId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="AboneInfo">
-      <EntityTypeMapping TypeName="DergiElektrikModel.AboneInfo">
-        <MappingFragment StoreEntitySet="AboneInfo">
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
           <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="AboneName" ColumnName="AboneName" />
-          <ScalarProperty Name="AboneId" ColumnName="AboneId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Editor">
-      <EntityTypeMapping TypeName="DergiElektrikModel.Editor">
-        <MappingFragment StoreEntitySet="Editor">
+    <EntitySetMapping Name="Rportaj">
+      <EntityTypeMapping TypeName="DergiElektrikModel.Rportaj">
+        <MappingFragment StoreEntitySet="Rportaj">
+          <ScalarProperty Name="RportajId" ColumnName="RportajId" />
+          <ScalarProperty Name="RportajBaslik" ColumnName="RportajBaslik" />
+          <ScalarProperty Name="RportajYazi" ColumnName="RportajYazi" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
           <ScalarProperty Name="Keywords" ColumnName="Keywords" />
-          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
-          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
-          <ScalarProperty Name="EditorId" ColumnName="EditorId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Sektorden">
       <EntityTypeMapping TypeName="DergiElektrikModel.Sektorden">
         <MappingFragment StoreEntitySet="Sektorden">
-          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
-          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
-          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-          <ScalarProperty Name="Yazi" ColumnName="Yazi" />
-          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
           <ScalarProperty Name="SektorId" ColumnName="SektorId" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Yazi" ColumnName="Yazi" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiteYonetim">
+      <EntityTypeMapping TypeName="DergiElektrikModel.SiteYonetim">
+        <MappingFragment StoreEntitySet="SiteYonetim">
+          <ScalarProperty Name="SıteID" ColumnName="SıteID" />
+          <ScalarProperty Name="SiteBaslik" ColumnName="SiteBaslik" />
+          <ScalarProperty Name="SiteAciklama" ColumnName="SiteAciklama" />
+          <ScalarProperty Name="SiteKeywords" ColumnName="SiteKeywords" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="stdImages">
       <EntityTypeMapping TypeName="DergiElektrikModel.stdImages">
         <MappingFragment StoreEntitySet="stdImages">
-          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Akedemisyen">
-      <EntityTypeMapping TypeName="DergiElektrikModel.Akedemisyen">
-        <MappingFragment StoreEntitySet="Akedemisyen">
-          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+    <EntitySetMapping Name="Teknoloji">
+      <EntityTypeMapping TypeName="DergiElektrikModel.Teknoloji">
+        <MappingFragment StoreEntitySet="Teknoloji">
+          <ScalarProperty Name="TeknoId" ColumnName="TeknoId" />
+          <ScalarProperty Name="TeknoBaslik" ColumnName="TeknoBaslik" />
+          <ScalarProperty Name="TeknoYazi" ColumnName="TeknoYazi" />
           <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-          <ScalarProperty Name="Ekleyen" ColumnName="Ekleyen" />
-          <ScalarProperty Name="Yazi" ColumnName="Yazi" />
-          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
-          <ScalarProperty Name="AkedemiId" ColumnName="AkedemiId" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="DeleteUrl" ColumnName="DeleteUrl" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
