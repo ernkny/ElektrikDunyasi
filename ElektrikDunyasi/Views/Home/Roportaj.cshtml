@@ -21,7 +21,7 @@
                 <div class="alt-page">
                     <h3>@item.RportajBaslik</h3>
                     <div class="alt-cizgi " style="border-top-color: #800080;"></div>
-                    <span class="page-tarih "><i class="fas fa-calendar-alt "></i>@item.Tarih.ToString().Substring(0, 10)</span>
+                    <span class="page-tarih "><i class="fas fa-calendar-alt "></i>@item.Tarih.ToString().Split(' ').First()</span>
                     <img class="img-fluid " src="@item.ImageUrl.Replace("..","") " alt="@item.Keywords ">
                     <p class="text-justify ">
                         @Html.Raw(item.RportajYazi)

@@ -10,6 +10,7 @@
  
     @foreach (var item in Model.dergi.Where(m => m.DergiId == Model.id))
     {
+
         <iframe id="iframss"style="position: relative; width: 100%; height: 1000px;" src="@item.DergiUrl.Replace("..","")"></iframe>
     }
 </div>

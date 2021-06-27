@@ -73,17 +73,19 @@
                                                 
                                                 <tr>
                                                    
-                                                    <td><img src="@item.ImageUrl" width="60" alt="@item.Keywords" /></td>
+                                                    <td><a  href="Teknoji/@item.TeknoId"><img src="@item.ImageUrl" width="60" alt="@item.Keywords" /></a></td>
 
                                                     <td>
                                                         @{int a; if (item.TeknoBaslik.Length > 30) { a = 30; } else { a = item.TeknoBaslik.Length; }
 
                                                         }
-                                                        <span class="floating-baslik">
+                                                        <a  href="Teknoji/@item.TeknoId">
+                                                            <span class="floating-baslik">
 
-                                                            @item.TeknoBaslik.Substring(0, a)...
+                                                                @item.TeknoBaslik.Substring(0, a)...
 
-                                                        </span>
+                                                            </span>
+                                                        </a>
                                                         <a href="Teknoji/@item.TeknoId">
                                                             @{string metin = System.Text.RegularExpressions.Regex.Replace(item.TeknoYazi, @"<(.|\n)*?>", string.Empty);
                                                                 int d; if (metin.Length > 100) { d = 100; } else { d = metin.Length; }}
@@ -123,21 +125,22 @@
 
                                             <tr>
 
-                                                <td><img src="@item.ImageUrl" width="60" alt="@item.Keywords" /></td>
+                                                <td><a href="Roportaj/@item.RportajId"><img src="@item.ImageUrl" width="60" alt="@item.Keywords" /></a></td>
 
                                                 <td>
                                                     @{int a; if (item.RportajBaslik.Length > 30) { a = 30; } else { a = item.RportajBaslik.Length; }
 
                                                     }
-                                                    <span class="floating-baslik">
+                                                    <a href="Roportaj/@item.RportajId"><span class="floating-baslik">
 
                                                         @item.RportajBaslik.Substring(0, a)...
 
                                                     </span>
+                                                    </a>
 
                                                     @{string metin = System.Text.RegularExpressions.Regex.Replace(item.RportajYazi, @"<(.|\n)*?>", string.Empty);
                                                         int c; if (metin.Length > 100) { c = 100; } else { c = metin.Length; }}
-                                                    <p class="vertical-icerik">@Html.Raw(metin.Substring(0, c)) ...</p>
+                                                <a href="Roportaj/@item.RportajId"> <p class="vertical-icerik">@Html.Raw(metin.Substring(0, c)) ...</p></a>
                                                 </td>
 
                                             </tr>
@@ -170,22 +173,22 @@
 
                                             <tr>
 
-                                                <td><img src="@item.ImageUrl" width="60" alt="@item.Keywords" /></td>
+                                                <td><a href="Makale/@item.MakaleId"><img src="@item.ImageUrl" width="60" alt="@item.Keywords" /></a></td>
 
                                                 <td>
 
                                                     @{int a; if (item.MakaleBaslik.Length > 30) { a = 30; } else { a = item.MakaleBaslik.Length; }
 
                                                     }
-                                                    <span class="floating-baslik">
+                                                    <a href="Makale/@item.MakaleId"><span class="floating-baslik">
 
                                                         @item.MakaleBaslik.Substring(0, a)...
 
-                                                    </span>
+                                                    </span></a>
 
                                                     @{string metin = System.Text.RegularExpressions.Regex.Replace(item.MakaleYazi, @"<(.|\n)*?>", string.Empty);
                                                         int b; if (metin.Length > 100) { b = 100; } else { b = metin.Length; }}
-                                                    <p class="vertical-icerik">@Html.Raw(metin.Substring(0, b)) ...</p>
+                                                    <a href="Makale/@item.MakaleId"> <p class="vertical-icerik">@Html.Raw(metin.Substring(0, b)) ...</p></a>
                                                 </td>
 
                                             </tr>
